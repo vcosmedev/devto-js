@@ -100,12 +100,32 @@
   font-size: 14px;
   flex-wrap: nowrap;
   margin-left: 57px;
-  
+  height: 100%;
+  justify-content: space-between;
+  margin-right: 30px;
+
 
 }
 .post__reactions div{
   margin-right: 10px;   
   margin-bottom: 10px;
+
+}
+.reactions__number{
+margin-left: 0px;
+font-size: 14px;
+color: #404040;
+}
+.comments__number{
+  color: #404040;
+
+}
+.time__read{
+  color: #404040;
+
+}
+.time__read i{
+  color: #404040;
 
 }
 .post__reply{
@@ -146,10 +166,12 @@
   font-size: 14px;
 }
 .reply__see__more{
-  margin-left: 57px;
+  margin-left: 58px;
   font-size: 14px;
   color: #3d3d3d;
 }
 .card{
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
+  
+
