@@ -1,11 +1,9 @@
-body {
-  background-color: black;
+aside .container .card-body a {
+  color: aqua;
+  padding-top: 40px;
+  font-size: 24px;
 }
 
-html {
-  background-color: black;
-}
-
-aside {
-  background-color: black;
+h5 {
+  color: aqua;
 }/*# sourceMappingURL=styles.css.map */

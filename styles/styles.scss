@@ -1,10 +1,15 @@
-
-body{
-    background-color: black;
-}
-html{
-    background-color: black
-}
 aside{
-    background-color: black;
+    .container{
+        .card-body{
+            a{
+                color: aqua;
+                padding-top: 40px;
+                font-size: 24px;
+            }
+        }
+    }
+}
+h5{
+    color: aqua;
+    
 }
