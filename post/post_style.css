@@ -1,0 +1,30 @@
+body {
+  background-color: #f5f5f5;
+  font-family: Helvetica;
+}
+
+/* NAV */
+.nav__container {
+  height: 56px;
+}
+.nav__container .nav__form__container .form__search {
+  width: 420px;
+}
+.nav__container .nav__form__container .search__button .search__hover:hover {
+  background-color: rgba(40, 116, 166, 0.1) !important;
+}
+
+/* FOOTER */
+.footer__container {
+  background-color: #e5e5e5;
+}
+.footer__container .footer__a {
+  color: rgb(59, 73, 223);
+}
+.footer__container .footer_ul__container > li > a {
+  font-size: 0.8rem;
+  color: rgb(59, 73, 223);
+}
+.footer__container .footer__container__line__height {
+  line-height: 0rem;
+}/*# sourceMappingURL=post_style.css.map */
