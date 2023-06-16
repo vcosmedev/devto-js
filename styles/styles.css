@@ -1,9 +1,22 @@
-aside .container .card-body a {
-  color: aqua;
-  padding-top: 40px;
-  font-size: 24px;
+.listing__type {
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+.listing__type .listing__type:hover {
+  color: aliceblue;
+}
+.listing__type .listing__type:hover .comment__vinc:hover {
+  color: black;
 }
 
-h5 {
-  color: aqua;
+.comment__vinc {
+  font-size: 14px;
+  text-decoration: none;
+  color: #717171;
+}
+
+a {
+  font-size: 16px;
+  font-family: var(--ff-sans-serif);
 }/*# sourceMappingURL=styles.css.map */
