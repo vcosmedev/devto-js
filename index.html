@@ -6,22 +6,29 @@
     <title>PrietosEnAprietos</title>
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./styles/styles.css" />
-    
-      
-        <style>
-          /* Efecto hover para los enlaces */
-          .text-dark.text-decoration-none:hover,
-          .listing__type:hover {
-            color: blue;
-          }
-        </style>
-     
-      
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
 
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <style>
+      /* Efecto hover para los enlaces */
+      .text-dark.text-decoration-none:hover,
+      .listing__type:hover {
+        color: blue;
+      }
+    </style>
   </head>
   <body>
     <!-- NAV -->
@@ -30,7 +37,7 @@
         <div class="container-xl p-0 justify-content-between flex-nowrap">
           <div class="d-flex">
             <button
-              class="navbar-toggler mx-1 border-0 d-md-none"
+              class="navbar-toggler mx-md-1 me-2 border-0 d-md-none px-0"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasNavbar"
@@ -123,7 +130,7 @@
             </a>
             <a href="">
               <img
-                src="https://res.cloudinary.com/practicaldev/image/fetch/s---HJ_1RxA--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1100366/0164ce41-abf1-479f-92c8-947a44b4a247.jpeg"
+                src="https://ca.slack-edge.com/TCRFJBKB6-U0275TN36E8-db6aee7f44f9-192"
                 alt=""
                 class="navbar-nav rounded-circle me-1"
                 height="40"
@@ -199,11 +206,11 @@
       </nav>
     </header>
     <!-- MAIN & ASIDES -->
-    <div class="container">
+    <div class="container-lg">
       <div class="row">
-        <aside class="col-3 d-none d-sm-block">Aside 1</aside>
+        <aside class="col-3 d-none d-md-block">Aside 1</aside>
         <main
-          class="col-12 col-sm-9 col-lg-6 justify-content-center d-flex flex-column"
+          class="col-12 col-md-9 col-lg-6 justify-content-center d-flex flex-column"
         >
           <div class="main__title__container">
             <ul class="main__title__items">
@@ -213,92 +220,91 @@
             </ul>
           </div>
           <!-- CARD 1 -->
-          <div class="card" style="width: 100%; border-radius: 5px">
-            <img
-              class="card-img-top"
-              src="https://res.cloudinary.com/practicaldev/image/fetch/s--IFtoDlk5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q211h5iert1xno1r16lr.png"
-              alt="..."
-            />
-            <div class="poster">
+          <a href="post/post.html" class="text-decoration-none">
+            <div class="card" style="width: 100%; border-radius: 5px">
               <img
-                class="rounded-5 post__photo"
-                alt="algo"
-                src="https://res.cloudinary.com/practicaldev/image/fetch/s--cf1x0CkB--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/495014/9ebab45e-599d-4d92-bb2b-e8a2dfbf8d3a.jpg"
-                alt=""
+                class="card-img-top"
+                src="https://res.cloudinary.com/practicaldev/image/fetch/s--IFtoDlk5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q211h5iert1xno1r16lr.png"
+                alt="..."
               />
-
-              <div class="post__info">
-                <p class="post__name">Jatin Sharma for Documatic</p>
-                <br />
-                <p class="post__date">Posted on june 10</p>
+              <div class="poster">
+                <img
+                  class="rounded-5 post__photo"
+                  alt="algo"
+                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--cf1x0CkB--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/495014/9ebab45e-599d-4d92-bb2b-e8a2dfbf8d3a.jpg"
+                  alt=""
+                />
+                <div class="post__info">
+                  <p class="post__name">Jatin Sharma for Documatic</p>
+                  <br />
+                  <p class="post__date">Posted on june 10</p>
+                </div>
               </div>
-            </div>
-
-            <h1 class="post__title">
-              Simplify Your C# Code: Top 5 Refactoring Tools
-            </h1>
-            <div class="post__prog__lang">
-              <div><button class="post__language">#csharp</button></div>
-              <div><button class="post__language">#webdev</button></div>
-              <div><button class="post__language">#beginners</button></div>
-              <div><button class="post__language">#programming</button></div>
-            </div>
-            <div class="post__reactions d-flex d-row">
-              <img src="sources/images/reactions.png" alt="" />
-              <span class="reactions__number">101 Reactions</span>
-              <span class="comments__number"
-                ><img src="sources/images/comments.png" alt="" />20
-                Comments</span
-              >
-              <span class="time__read"
-                >3 min read <i class="bi bi-bookmark"></i
-              ></span>
-              <!-- <div><img
-                  src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"
-                  alt="">45</div>
-              <div><img
-                  src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"
-                  alt="">20</div>
-              <div><img
-                  src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"
-                  alt="">17</div>
-              <div><img
-                  src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"
-                  alt="">23</div>
-              <div><img
-                  src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"
-                  alt="">17</div>
-            </div> -->
-            </div>
-
-            <div class="post__reply">
-              <img
-                class="rounded-5 post__photo__reply"
-                alt="algo"
-                src="sources/images/moi.svg"
-                alt=""
-              />
-              <div class="reply__box">
-                <p class="reply__name">Moi 1 day ago</p>
-                <p class="reply__text">
-                  Entonces quién va a querer comprarme un piano?
-                </p>
+              <h1 class="post__title">
+                Simplify Your C# Code: Top 5 Refactoring Tools
+              </h1>
+              <div class="post__prog__lang">
+                <div><button class="post__language">#csharp</button></div>
+                <div><button class="post__language">#webdev</button></div>
+                <div><button class="post__language">#beginners</button></div>
+                <div><button class="post__language">#programming</button></div>
               </div>
-            </div>
-            <div class="post__reply">
-              <img
-                class="rounded-5 post__photo__reply"
-                alt="algo"
-                src="sources/images/oli.svg"
-                alt=""
-              />
-              <div class="reply__box">
-                <p class="reply__name">Oliver 1 day ago</p>
-                <p class="reply__text">No pues está cabrón</p>
+              <div class="post__reactions d-flex d-row">
+                <img src="sources/images/reactions.png" alt="" />
+                <span class="reactions__number">101 Reactions</span>
+                <span class="comments__number"
+                  ><img src="sources/images/comments.png" alt="" />20
+                  Comments</span
+                >
+                <span class="time__read"
+                  >3 min read <i class="bi bi-bookmark"></i
+                ></span>
+                <!-- <div><img
+                    src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"
+                    alt="">45</div>
+                <div><img
+                    src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"
+                    alt="">20</div>
+                <div><img
+                    src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"
+                    alt="">17</div>
+                <div><img
+                    src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"
+                    alt="">23</div>
+                <div><img
+                    src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"
+                    alt="">17</div>
+              </div> -->
               </div>
+              <div class="post__reply">
+                <img
+                  class="rounded-5 post__photo__reply"
+                  alt="algo"
+                  src="sources/images/moi.svg"
+                  alt=""
+                />
+                <div class="reply__box">
+                  <p class="reply__name">Moi 1 day ago</p>
+                  <p class="reply__text">
+                    Entonces quién va a querer comprarme un piano?
+                  </p>
+                </div>
+              </div>
+              <div class="post__reply">
+                <img
+                  class="rounded-5 post__photo__reply"
+                  alt="algo"
+                  src="sources/images/oli.svg"
+                  alt=""
+                />
+                <div class="reply__box">
+                  <p class="reply__name">Oliver 1 day ago</p>
+                  <p class="reply__text">No pues está cabrón</p>
+                </div>
+              </div>
+              <p class="reply__see__more">See all 15 comments</p>
             </div>
-            <p class="reply__see__more">See all 15 comments</p>
-          </div>
+          </a>
 
           <!-- EMPIEZA CARD 2 -->
           <div class="card card2" style="width: 100%; border-radius: 5px">
@@ -553,145 +559,165 @@
             <p class="reply__see__more">See all 17 comments</p>
           </div>
         </main>
-        <aside class="d-none d-lg-block">
+        <aside class="col-3 d-none d-lg-block mt-3">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                Listings
+                <a href="#" class="fs-5 text-decoration-none">See all</a>
+              </h5>
 
-
-
-          <p class="example12"> soy un hover</p>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-9">
-                <!-- Contenido principal -->
-              </div>
-              <div class="col-md-3">
-                <div class="card mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-between">
-                      Listings
-                      <a  href="#" class="fs-5 text-decoration-none">See all</a>
-                    </h5>
-
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">Playwright Test Automation Mentorship
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">Jobs</a>
-                      </div>
-                    </a>
-                   
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">📨 This Week In React - Newsletter for React Experts ⚛️ - Join 21748 others!
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">Collabs</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">Java Quick Start Tutorial on Foojay.io
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">Products</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">Ebook: "Getting Started with Java on the Raspberry Pi"
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">Collabs</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a  class="listing__type"href="#" class="my-2 text-dark text-decoration-none">🏅Level up your o11y knowledge w/ free learning paths & badges from New Relic University.
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">Collabs</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <div class="text-center">
-                      <a href="#" class="my-2 text-dark text-decoration-none">Create</a>
-                    </div>
-                  </div>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >Playwright Test Automation Mentorship
+                <div>
+                  <a class="comment__vinc" href="#">Jobs</a>
                 </div>
-        
-                <div class="card mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-between">
-                      #discuss
-                    </h5>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">38 programming languages. Tried them all!
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">4 Comentarios</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">Cracking the Work-Life Balance Code: Unconventional Strategies for Remote Developers
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">2 Comentarios</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">How Do You Master New Tech? Any Hacks for Faster Language Learning? 
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">4 Comentarios</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">“The Individual Touch", Emerging Market Forecast: Impactful Innovation VS Analytical Abstraction.
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">3 Comentarios</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">Git for All Developers: Essential or Optional?
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">9 Comentarios</a>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-        
-                <div class="card mb-4">
-                  <div class="card-body">
-                    <h5 class="card-title d-flex justify-content-between">
-                      #watercooler
-                    </h5>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">How to Manage Your Time as a Software Developer ⌛️
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">4 Comentarios</a>
-                      </div>
-                    </a>
-                    <hr class="my-2">
-                    <a class="listing__type" href="#" class="my-2 text-dark text-decoration-none">The ideal, professional workplace
-                      <div>
-                        <a class="comment__vinc"
-                        href="#">New</a>
-                      </div>
-                    </a>
-                    
-                   
-                  </div>
-                </div>
-        
-                
+              </a>
 
-
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >📨 This Week In React - Newsletter for React Experts ⚛️ - Join
+                21748 others!
+                <div>
+                  <a class="comment__vinc" href="#">Collabs</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >Java Quick Start Tutorial on Foojay.io
+                <div>
+                  <a class="comment__vinc" href="#">Products</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >Ebook: "Getting Started with Java on the Raspberry Pi"
+                <div>
+                  <a class="comment__vinc" href="#">Collabs</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >🏅Level up your o11y knowledge w/ free learning paths & badges
+                from New Relic University.
+                <div>
+                  <a class="comment__vinc" href="#">Collabs</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <div class="text-center">
+                <a href="#" class="my-2 text-dark text-decoration-none"
+                  >Create</a
+                >
               </div>
             </div>
           </div>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                #discuss
+              </h5>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >38 programming languages. Tried them all!
+                <div>
+                  <a class="comment__vinc" href="#">4 Comentarios</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >Cracking the Work-Life Balance Code: Unconventional Strategies
+                for Remote Developers
+                <div>
+                  <a class="comment__vinc" href="#">2 Comentarios</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >How Do You Master New Tech? Any Hacks for Faster Language
+                Learning?
+                <div>
+                  <a class="comment__vinc" href="#">4 Comentarios</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >“The Individual Touch", Emerging Market Forecast: Impactful
+                Innovation VS Analytical Abstraction.
+                <div>
+                  <a class="comment__vinc" href="#">3 Comentarios</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >Git for All Developers: Essential or Optional?
+                <div>
+                  <a class="comment__vinc" href="#">9 Comentarios</a>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-between">
+                #watercooler
+              </h5>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >How to Manage Your Time as a Software Developer ⌛️
+                <div>
+                  <a class="comment__vinc" href="#">4 Comentarios</a>
+                </div>
+              </a>
+              <hr class="my-2" />
+              <a
+                class="listing__type"
+                href="#"
+                class="my-2 text-dark text-decoration-none"
+                >The ideal, professional workplace
+                <div>
+                  <a class="comment__vinc" href="#">New</a>
+                </div>
+              </a>
+            </div>
+          </div>
         </aside>
-        
-        
-                
-        
       </div>
     </div>
     <!-- FOOTER -->
