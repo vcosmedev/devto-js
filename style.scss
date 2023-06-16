@@ -14,17 +14,25 @@ body {
   }
 }
 
-/* MAIN & FOOTER */
+/* FOOTER */
 
-footer {
-  background-color: lightgray;
+.footer__container {
+  background-color: #e5e5e5;
+
+  .footer__a {
+    color: rgb(59, 73, 223);
+  }
+
+  .footer_ul__container > li > a {
+    font-size: 0.8rem;
+    color: rgb(59, 73, 223);
+  }
+  .footer__container__line__height {
+    line-height: 0rem;
+  }
 }
-.footer__text1 {
-  font-size: 12px;
-}
-.footer__text2 {
-  font-size: 12px;
-}
+
+/* MAIN */
 
 .lista__footer {
   font-size: 12px;
