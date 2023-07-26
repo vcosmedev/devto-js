@@ -16,6 +16,8 @@ const processData = async () => {
 
     currobj['id'] = key;
 
+    //console.log(currobj['tags']);
+
     return [...accum, currobj];
   }, []);
 
@@ -23,6 +25,10 @@ const processData = async () => {
 };
 
 const data = await processData();
+
+// PARA OBTENER TAGS ->
+data.forEach((post, i) => console.log(i + 1, post['tags']));
+//
 
 const main = document.getElementById('cards-main');
 
