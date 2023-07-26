@@ -23,7 +23,7 @@ document
 
 const createData = (dataobj) => {
   const random = Math.floor(Math.random() * 10) + 1;
-  dataobj['author'] = 'Moisés'; //localStorage.getItem('author');
+  dataobj['author'] = 'Oli'; //localStorage.getItem('author');
   dataobj['profilePic'] = randomImage();
   dataobj['date'] = getExplicitDate(new Date());
   dataobj['comments'] = 0;

@@ -14,17 +14,8 @@ const createTags = (arrtags) => {
 };
 
 const createPost = (data, isfirst) => {
-  const {
-    id,
-    author,
-    profilePic,
-    date,
-    img,
-    title,
-    /* tags, ELIMINAR*/ comments,
-    readtime,
-  } = data;
-  const tags = 0;
+  const { id, author, profilePic, date, img, title, tags, comments, readtime } =
+    data;
 
   const reacts = 0;
 

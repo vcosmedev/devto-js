@@ -8,8 +8,6 @@ const currentid = urlparams.get('id');
 
 const data = await getUniquePost(currentid);
 
-const prueba = ['ola', 'ola2', 'ola3'];
-
 const renderPost = (data) => {
   const {
     author,
@@ -36,7 +34,7 @@ const renderPost = (data) => {
   createUniquePost('comments-image-post', profilePic, true);
   createUniquePost('comments-total-post', comments, false);
 
-  document.getElementById('tags-post').append(createTags(prueba));
+  document.getElementById('tags-post').append(createTags(tags));
 };
 
 renderPost(data);
