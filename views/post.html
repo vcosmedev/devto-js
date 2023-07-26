@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POST</title>
+    <title>PrietosEnAprietos</title>
 
     <!-- CSS -->
     <link
@@ -12,10 +12,10 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/post_style.css" />
   </head>
   <body>
+    <!-- NAV -->
     <!-- NAV -->
     <header class="sticky-top">
       <nav class="navbar p-0 px-3 bg-white nav__container">
@@ -77,9 +77,11 @@
             </div>
           </div>
           <div class="d-flex">
-            <button class="btn btn-outline-primary d-none d-md-block">
-              Create Post
-            </button>
+            <a href="create.html">
+              <button class="btn btn-outline-primary d-none d-md-block">
+                Create Post
+              </button>
+            </a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -115,7 +117,7 @@
             </a>
             <a href="">
               <img
-                src="https://ca.slack-edge.com/TCRFJBKB6-U0275TN36E8-db6aee7f44f9-192"
+                id="picauthor-nav"
                 alt=""
                 class="navbar-nav rounded-circle me-1"
                 height="40"
@@ -1200,37 +1202,29 @@
         <main class="col-12 col-md-11 col-lg-8 px-0 mb-5">
           <section class="d-flex flex-column">
             <div class="card">
-              <img
-                src="https://res.cloudinary.com/practicaldev/image/fetch/s--IFtoDlk5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/q211h5iert1xno1r16lr.png"
-                class="card-img-top"
-                alt="..."
-              />
+              <img class="card-img-top" id="img-post" />
               <div class="card-body p-md-5 p-3">
                 <div class="d-flex justify-content-start">
                   <div class="position-relative">
                     <img
-                      src="https://res.cloudinary.com/practicaldev/image/fetch/s--dh67OQ-m--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/6187/90757535-3192-487a-a278-73b0ff7bec09.png"
+                      src="data:image/png;base64,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"
                       alt=""
                       class="rounded-circle"
                       width="40"
                       height="40"
                     />
                     <img
-                      src="https://res.cloudinary.com/practicaldev/image/fetch/s--cf1x0CkB--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/495014/9ebab45e-599d-4d92-bb2b-e8a2dfbf8d3a.jpg"
-                      alt=""
                       width="24"
                       height="24"
                       class="rounded-circle position-absolute start-50 top-50"
+                      id="picauthor-post"
                     />
                   </div>
 
                   <div class="ms-3">
-                    <h5 class="card-title fw-semibold">
-                      Jatin Sharma
-                      <small class="text-body-secondary">for Documatic</small>
-                    </h5>
+                    <h5 class="card-title fw-semibold" id="author-post"></h5>
                     <h6 class="card-subtitle mb-2 text-muted">
-                      Posted on 10 jun
+                      Posted on <span id="date-post"></span>
                     </h6>
                   </div>
                 </div>
@@ -1281,172 +1275,10 @@
                   </span>
                 </div>
                 <div class="mt-1">
-                  <h1 class="fw-bold">
-                    Simplify Your C# Code: Top 5 Refactoring Tools
-                  </h1>
-                  <div class="my-3">
-                    <a href="#" class="text-decoration-none ms-2"
-                      >#<span style="color: black">csharp</span>
-                    </a>
-                    <a href="#" class="text-decoration-none ms-2"
-                      >#<span style="color: black">webdev</span>
-                    </a>
-                    <a href="#" class="text-decoration-none ms-2"
-                      >#<span style="color: black">beggingers</span>
-                    </a>
-                    <a href="#" class="text-decoration-none ms-2"
-                      >#<span style="color: black">programming</span>
-                    </a>
-                  </div>
+                  <h1 class="fw-bold" id="title-post"></h1>
+                  <div class="my-3" id="tags-post"></div>
                   <div class="card-text fs-5">
-                    <p>
-                      When we hear refactoring what comes to mind? I am sure it
-                      would be like we just modify the previous code for some
-                      reason. That could be because it had some bugs or maybe it
-                      was the expensive approach. There could be thousands of
-                      reasons that you might want to refactor your code. That's
-                      why in this article you will learn what Code Refactoring
-                      is and how can one refactor their code. In this article,
-                      I'll also cover some of the most popular refactoring tools
-                      and techniques in
-                      <a href="#" class="icon-link icon-link-hover">C#</a>.
-                    </p>
-                    <h2 class="fw-bold">Table of Contents</h2>
-                    <ul>
-                      <li>
-                        <a href="#Refactoring">What is Code Refactoring?</a>
-                      </li>
-                      <li><a href="#Resharper">Resharper</a></li>
-                      <li><a href="#Codemiad">CodeMiad</a></li>
-                    </ul>
-                    <a name="Refactoring"></a>
-                    <h2 class="fw-bold">What is Code Refactoring?</h2>
-
-                    <p>
-                      Code Refactoring is the process of improving code without
-                      changing its behavior. It is often done to make code more
-                      readable and maintainable. Refactoring helps developers
-                      take existing code and make it cleaner and more reusable,
-                      which makes it easier to work with in the future.
-                    </p>
-
-                    <p>
-                      Code Refactoring can be done at different levels.
-                      Following are some common refactoring techniques include:
-                    </p>
-
-                    <ul>
-                      <li>
-                        <span class="fw-bold">Extract method:</span> Refactor a
-                        portion of code into its method
-                      </li>
-                      <li>
-                        <span class="fw-bold">Rename:</span> Rename a variable
-                        or method to better reflect its purpose
-                      </li>
-                      <li>
-                        Remove duplication: Remove repeated code by creating a
-                        share function or a class
-                      </li>
-                    </ul>
-
-                    <p>
-                      There may be more properties, but ultimately the main
-                      point matters. Now let's take a look at some of the best
-                      tools for refactoring your code.
-                    </p>
-
-                    <a name="Resharper"></a>
-                    <h2 class="fw-bold">Resharper</h2>
-
-                    <p>
-                      <a href="#">Resharper</a> is a popular C# refactoring tool
-                      that can improve code quality and maintainability. It
-                      offers a range of features, including code completion,
-                      code analysis, code formatting, code cleanup, and more.
-                    </p>
-
-                    <img
-                      src="https://res.cloudinary.com/practicaldev/image/fetch/s--8_9HOvJz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://i.imgur.com/hsq1h55.png"
-                      class="container-fluid rounded mb-4 p-0"
-                    />
-
-                    <p>
-                      Here's an example of using ReSharper to extract a method:
-                    </p>
-
-                    <a href="../sources/images/code_post.png" target="_blank">
-                      <img
-                        src="../sources/images/code_post.png
-                        "
-                        class="container-fluid p-0"
-                      />
-                    </a>
-
-                    <p>
-                      In the above example, the CodeRush tool was used to
-                      introduce a <kbd>value2</kbd> parameter to the
-                      <kbd>Add</kbd> method and a second overload of the
-                      <kbd>Add</kbd> method that accepts only one argument and
-                      calls the version with two.
-                    </p>
-
-                    <div class="ratio ratio-16x9 mb-4">
-                      <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/3o26HaNdxqk"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                    <a name="Codemiad"></a>
-                    <h2 class="fw-bold">CodeMiad</h2>
-
-                    <p>
-                      <a href="#">CodeMiad</a> is an open-source Visual Studio
-                      extension to cleanup and simplifies our C#, C++, F#, VB,
-                      PHP, PowerShell, R, JSON, XAML, XML, ASP, HTML, CSS, LESS,
-                      SCSS, JavaScript and TypeScript coding.
-                    </p>
-
-                    <img
-                      src="https://res.cloudinary.com/practicaldev/image/fetch/s--ihW80oNX--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://i.imgur.com/YbAVl3V.png"
-                      alt=""
-                      class="container-fluid mb-4 p-0"
-                    />
-
-                    <p>
-                      Here's an example of using CodeMaid to reorganize class
-                      members:
-                    </p>
-
-                    <a href="../sources/images/code_post_2.png" target="_blank"
-                      ><img
-                        src="../sources/images/code_post_2.png"
-                        alt=""
-                        class="container-fluid mb-4 p-0"
-                    /></a>
-
-                    <p>
-                      In the above example, the CodeMaid tool was used to
-                      reorganize the class members in alphabetical order by
-                      name.
-                    </p>
-
-                    <div class="ratio ratio-16x9 mb-4">
-                      <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/M8iwCaw61Mo"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
+                    <p id="content-post"></p>
                   </div>
                 </div>
               </div>
@@ -1454,7 +1286,9 @@
               <div class="card-body p-md-5 p-3">
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex">
-                    <h2 class="card-title fw-bold m-0">Top comments (3)</h2>
+                    <h2 class="card-title fw-bold m-0">
+                      Top comments (<span id="comments-total-post"></span>)
+                    </h2>
                     <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -1475,10 +1309,10 @@
                 </div>
                 <div class="d-flex mt-5 justify-content-between">
                   <img
-                    src="https://ca.slack-edge.com/TCRFJBKB6-U0275TN36E8-db6aee7f44f9-192"
                     width="24"
                     height="24"
                     class="rounded-circle"
+                    id="comments-image-post"
                   />
                   <div class="form-floating" style="width: 90%">
                     <textarea
@@ -1497,7 +1331,7 @@
                   </div>
                 </div>
 
-                <div class="d-flex mt-5 justify-content-between">
+                <!-- <div class="d-flex mt-5 justify-content-between">
                   <img
                     src="../sources/images/moi.svg"
                     width="24"
@@ -1656,7 +1490,7 @@
                       </span>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <div class="d-flex justify-content-center mt-5">
                   <p class="text-secondary">Code of Conduct • Report abuse</p>
@@ -1672,13 +1506,13 @@
               <li class="list-group-item position-relative">
                 <span class="bg-white rounded position-absolute bottom-0">
                   <img
-                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--KQZQeede--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/6187/90757535-3192-487a-a278-73b0ff7bec09.png"
+                    src="data:image/png;base64,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"
                     class="rounded"
                     width="48"
                     height="48"
                   />
                 </span>
-                <span class="ms-5">Documatic</span>
+                <span class="ms-5">Kodemia</span>
               </li>
               <li class="list-group-item d-flex justify-content-center">
                 <button class="btn btn-primary w-100">Follow</button>
@@ -2067,6 +1901,7 @@
       </p>
     </footer>
 
+    <script src="../js/post.js" type="module"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

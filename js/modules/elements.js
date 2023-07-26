@@ -1,11 +1,8 @@
-const createTags = (strtags) => {
-  const tags = strtags.split(', ');
+const createTags = (arrtags) => {
   const container = document.createElement('div');
   container.classList.add('mb-3');
 
-  const printtags = tags.slice(0, 4);
-
-  printtags.forEach((tag) => {
+  arrtags.forEach((tag) => {
     const a = document.createElement('a');
     a.classList.add('me-2');
     a.innerText = tag;
@@ -17,8 +14,17 @@ const createTags = (strtags) => {
 };
 
 const createPost = (data, isfirst) => {
-  const { id, author, profilePic, date, img, title, tags, comments, readtime } =
-    data;
+  const {
+    id,
+    author,
+    profilePic,
+    date,
+    img,
+    title,
+    /* tags, */ comments,
+    readtime,
+  } = data;
+  const tags = 0;
 
   const reacts = 0;
 
@@ -185,4 +191,4 @@ const createUniquePost = (elementid, value, image) => {
   image ? (currentelement.src = value) : (currentelement.innerText = value);
 };
 
-export { createPost, createUniquePost };
+export { createPost, createUniquePost, createTags };
