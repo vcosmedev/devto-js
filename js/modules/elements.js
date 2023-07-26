@@ -21,7 +21,7 @@ const createPost = (data, isfirst) => {
     date,
     img,
     title,
-    /* tags, */ comments,
+    /* tags, ELIMINAR*/ comments,
     readtime,
   } = data;
   const tags = 0;
