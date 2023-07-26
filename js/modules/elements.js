@@ -20,6 +20,8 @@ const createPost = (data, isfirst) => {
   const { id, author, profilePic, date, img, title, tags, comments, readtime } =
     data;
 
+  const reacts = 0;
+
   const divpadre = document.createElement('div');
   divpadre.classList.add('card');
   divpadre.style.cssText = 'width: 100%; border-radius: 5px; cursor:pointer';
@@ -175,7 +177,7 @@ const createPost = (data, isfirst) => {
 
   divpadre.appendChild(divbody);
 
-  return 'ola';
+  return divpadre;
 };
 
 const createUniquePost = (elementid, value, image) => {
