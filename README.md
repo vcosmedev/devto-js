@@ -1,21 +1,15 @@
-# challenge_two
+# Dev-to JS
 
-## PrietosEnAprietos
+## Grupo 6
 
 ## Integrantes:
 
-- Luis
-
-- Chivis
+- Moisés 
 
 - Oliver
 
-- Leo
-
-- Max
-
-- Moi
+- Víctor
 
 ## Profesor:
 
-- Emi
+- Israel
