@@ -4,6 +4,7 @@ import { postPosts } from './modules/api.js';
 let data = {};
 let validate = true;
 
+//ELIMINAR
 const randomImage = () => {
   const images = [
     'https://yt3.googleusercontent.com/ytc/AOPolaSS99flGOVjbXL1KxlWI1B_-Sv5dUKzRlNtAASbJQ=s900-c-k-c0x00ffffff-no-rj',
@@ -13,6 +14,7 @@ const randomImage = () => {
 
   return images[Math.floor(Math.random() * 3)];
 };
+// ELIMINAR
 
 document
   .getElementById('form-control-post')
@@ -23,8 +25,8 @@ document
 
 const createData = (dataobj) => {
   const random = Math.floor(Math.random() * 10) + 1;
-  dataobj['author'] = 'Oli'; //localStorage.getItem('author');
-  dataobj['profilePic'] = randomImage();
+  dataobj['author'] = 'Random User'; //localStorage.getItem('author');
+  dataobj['profilePic'] = randomImage(); //localStorage.getItem('image');
   dataobj['date'] = getExplicitDate(new Date());
   dataobj['comments'] = 0;
   dataobj['relevant'] = random % 2 == 0 ? true : false;
