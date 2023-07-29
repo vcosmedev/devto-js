@@ -1,3 +1,13 @@
+/*En resumen, la función createPost toma los datos de una publicación
+y crea un elemento de tarjeta (card) que muestra la información de esa
+publicación en una página web. El código incluye una estructura HTML
+bien organizada y utiliza estilos CSS para dar formato a la presentación
+de la publicación. También utiliza eventos de clic para redireccionar
+al usuario a una página de detalles cuando hace clic en la tarjeta.
+Además, muestra de manera dinámica la cantidad de reacciones y comentarios
+según la información proporcionada en el objeto data.*/
+
+
 const createTags = (arrtags) => {
   const container = document.createElement('div');
   container.classList.add('mb-3');

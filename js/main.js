@@ -2,9 +2,9 @@ import { createPost } from './modules/elements.js';
 import { getPosts } from './modules/api.js';
 import { orderData } from './modules/orders.js';
 
-/* const authorpic = document.getElementById('author-picture');
+const authorpic = document.getElementById('author-picture');
 authorpic.src = localStorage.getItem('image');
-authorpic.classList.remove('d-none'); */
+authorpic.classList.remove('d-none');
 
 const processData = async () => {
   const dataposts = await getPosts();

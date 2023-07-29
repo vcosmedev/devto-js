@@ -1,3 +1,8 @@
+/*En resumen, este código proporciona funciones para obtener 
+todas las publicaciones, crear nuevas publicaciones y obtener 
+una publicación específica desde una base de datos en Firebase.*/
+
+
 const BASE_URI = 'https://devtojs27-default-rtdb.firebaseio.com';
 
 const getPosts = async () => {

@@ -1,3 +1,9 @@
+/*En resumen, estas funciones son utilidades que permiten
+obtener una versión explícita de una fecha (con el nombre del mes)
+y calcular el promedio de palabras por minuto en un texto. Estas
+funciones pueden ser útiles en un contexto de manipulación de
+fechas o de análisis de texto en una aplicación o página web.¨*/
+
 const getExplicitDate = (date) => {
   const month = date.getMonth();
   const day = date.getDate();
