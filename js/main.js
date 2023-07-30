@@ -1,5 +1,5 @@
 import { createPost } from './modules/elements.js';
-import { getPosts } from './modules/api.js';
+import { getPosts, getUniquePost } from './modules/api.js';
 import { orderData } from './modules/orders.js';
 
 const authorpic = document.getElementById('author-picture');
@@ -150,7 +150,19 @@ const renderAside = (data) => {
     listItem.appendChild(commentsElement);
 
     discussList.appendChild(listItem);
+
+    listItem.addEventListener('click', () => {
+      getUniquePost(post.id).then((postDetails) => {
+        // Aquí tienes los detalles del post específico en la variable postDetails
+        // Puedes hacer lo que necesites con estos detalles, por ejemplo, redirigir a la página de detalle del post
+        console.log('Detalles del post:', postDetails);
+        redirectToPostDetail(post.id);
+      }).catch((error) => {
+        console.error('Error al obtener los detalles del post:', error);
+      });
+    });
   });
+  
 
   watercoolerPosts.forEach((post) => {
     const listItem = document.createElement('li');
@@ -166,6 +178,17 @@ const renderAside = (data) => {
     listItem.appendChild(commentsElement);
 
     watercoolerList.appendChild(listItem);
+
+    listItem.addEventListener('click', () => {
+      getUniquePost(post.id).then((postDetails) => {
+        // Aquí tienes los detalles del post específico en la variable postDetails
+        // Puedes hacer lo que necesites con estos detalles, por ejemplo, redirigir a la página de detalle del post
+        console.log('Detalles del post:', postDetails);
+        redirectToPostDetail(post.id);
+      }).catch((error) => {
+        console.error('Error al obtener los detalles del post:', error);
+      });
+    });
   });
 
   // Agregamos las listas al aside
