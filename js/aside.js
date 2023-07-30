@@ -1,4 +1,24 @@
-const data = [
+
+/*import { getPosts } from './modules/api.js';
+
+
+const processData = async () => {
+    const dataposts = await getPosts();
+  
+    const keys = Object.keys(dataposts);
+  
+    const array = keys.reduce((accum, key) => {
+      const currobj = dataposts[key];
+  
+      currobj['id'] = key;
+  
+      return [...accum, currobj];
+    }, []);
+  
+    return array;
+  };
+
+/*const data = [
     {
       title: '#discuss',
       links: [
@@ -66,4 +86,4 @@ const data = [
   };
   
   // Llamamos a la función para renderizar el aside
-  renderAside(data);
+  renderAside(data);*/

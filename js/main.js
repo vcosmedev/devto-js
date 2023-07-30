@@ -5,7 +5,7 @@ import { orderData } from './modules/orders.js';
 const authorpic = document.getElementById('author-picture');
 authorpic.src = localStorage.getItem('image');
 authorpic.classList.remove('d-none');
-
+//variable global del array de post
 const processData = async () => {
   const dataposts = await getPosts();
 
@@ -23,6 +23,7 @@ const processData = async () => {
 };
 
 const data = await processData();
+
 
 const main = document.getElementById('cards-main');
 
@@ -64,3 +65,58 @@ order.forEach((item) => {
     }
   });
 });
+
+console.log(data);
+const createCard = (post) => {
+  const card = document.createElement('div');
+  card.classList.add('card', 'mb-4');
+
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body');
+
+  const cardTitle = document.createElement('h5');
+  cardTitle.classList.add('card-title', 'd-flex', 'justify-content-between');
+  cardTitle.textContent = post.title;
+
+  const separator = document.createElement('hr');
+  separator.classList.add('my-2');
+
+  cardBody.appendChild(cardTitle);
+  cardBody.appendChild(separator);
+
+  const tags = post.tags.filter(tag => tag === 'discuss' || tag === 'watercooler');
+  const tagsContainer = document.createElement('div');
+  tagsContainer.textContent = `Tags: ${tags.join(', ')}`;
+
+  const readTime = document.createElement('div');
+  readTime.textContent = `Read Time: ${post.readtime} min`;
+
+  const commentsContainer = document.createElement('div');
+  const commentsLink = document.createElement('a');
+  commentsLink.classList.add('comment__vinc');
+  commentsLink.href = '#';
+  commentsLink.textContent = `${post.comments.length} Comentarios`;
+
+  commentsContainer.appendChild(commentsLink);
+
+  cardBody.appendChild(tagsContainer);
+  cardBody.appendChild(readTime);
+  cardBody.appendChild(commentsContainer);
+
+  card.appendChild(cardBody);
+  return card;
+};
+
+// Función para renderizar el aside
+const renderAside = (data) => {
+  const asideContainer = document.getElementById('asideContainer');
+
+  const filteredPosts = data.filter(post => post.tags.includes('discuss') || post.tags.includes('watercooler'));
+  filteredPosts.forEach((post) => {
+    const card = createCard(post);
+    asideContainer.appendChild(card);
+  });
+};
+
+// Llamamos a la función para renderizar el aside con los post filtrados por los tags
+renderAside(data);
