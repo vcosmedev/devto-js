@@ -27,4 +27,7 @@ body {
 }
 .footer__container .footer__container__line__height {
   line-height: 0rem;
+}.card,
+.card-body {
+  border: none;
 }
