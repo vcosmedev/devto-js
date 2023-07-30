@@ -66,7 +66,6 @@ order.forEach((item) => {
   });
 });
 
-console.log(data);
 const createCard = (post) => {
   const card = document.createElement('div');
   card.classList.add('card', 'mb-4');
@@ -111,7 +110,7 @@ const createCard = (post) => {
 const renderAside = (data) => {
   const asideContainer = document.getElementById('asideContainer');
 
-  const filteredPosts = data.filter(post => post.tags.includes('discuss') || post.tags.includes('watercooler'));
+  const filteredPosts = data.filter(post => post.tags.includes('#discuss') || post.tags.includes('#watercooler'));
   filteredPosts.forEach((post) => {
     const card = createCard(post);
     asideContainer.appendChild(card);
