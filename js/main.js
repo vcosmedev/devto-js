@@ -1,7 +1,9 @@
+// Importar las funciones necesarias desde los módulos
 import { createPost } from './modules/elements.js';
 import { getPosts, getUniquePost } from './modules/api.js';
 import { orderData } from './modules/orders.js';
 
+// Obtener la imagen del autor del post desde el almacenamiento local y mostrarla
 const authorpic = document.getElementById('author-picture');
 authorpic.src = localStorage.getItem('image');
 authorpic.classList.remove('d-none');
@@ -18,11 +20,9 @@ const processData = async () => {
   return array;
 };
 
+// Obtener los datos de los posts y renderizar los principales
 const data = await processData();
-
-// Función para renderizar los posts principales
 const main = document.getElementById('cards-main');
-
 const renderData = (array) => {
   let count = 0;
   array.forEach((post) => {
@@ -34,13 +34,15 @@ const renderData = (array) => {
   });
 };
 
+// Renderizar los posts principales ordenados por relevancia
 renderData(orderData(data, 'relevant'));
 
+// Función para limpiar el contenido principal
 const cleanMain = () => {
   main.innerHTML = '';
 };
 
-// Manejo del filtrado de los posts
+// Manejo del filtrado de los posts al hacer clic en los elementos del aside
 const order = document.querySelectorAll('.data-item');
 let orderactive = document.querySelector('.main__title__selected');
 let currentData;
@@ -60,7 +62,7 @@ order.forEach((item) => {
   });
 });
 
-
+// Función para crear un elemento de tarjeta (card) para un post
 const createCard = (post) => {
   const card = document.createElement('div');
   card.classList.add('card', 'mb-4');
@@ -91,12 +93,7 @@ const createCard = (post) => {
   return card;
 };
 
-
-
-
-
-
-
+// Función para renderizar el aside con los posts filtrados por los tags
 const renderAside = (data) => {
   const asideContainer = document.getElementById('asideContainer');
 
@@ -129,13 +126,12 @@ const renderAside = (data) => {
     commentsElement.textContent = commentsText;
     return commentsElement;
   };
-  
 
   // Filtramos los posts por las categorías "Discuss" y "Watercooler"
   const discussPosts = data.filter(post => post.tags.includes('#discuss')).slice(0, 3);
   const watercoolerPosts = data.filter(post => post.tags.includes('#watercooler')).slice(0, 3);
 
-  // Renderizamos los títulos y comentarios para cada categoría en la lista
+  // Renderizamos los títulos y comentarios para cada categoría en la lista "Discuss"
   discussPosts.forEach((post) => {
     const listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
@@ -151,19 +147,13 @@ const renderAside = (data) => {
 
     discussList.appendChild(listItem);
 
+    // Agregar el manejador de eventos para el elemento de la lista
     listItem.addEventListener('click', () => {
-      getUniquePost(post.id).then((postDetails) => {
-        // Aquí tienes los detalles del post específico en la variable postDetails
-        // Puedes hacer lo que necesites con estos detalles, por ejemplo, redirigir a la página de detalle del post
-        console.log('Detalles del post:', postDetails);
-        redirectToPostDetail(post.id);
-      }).catch((error) => {
-        console.error('Error al obtener los detalles del post:', error);
-      });
+      redirectToPostDetail(post.id);
     });
   });
-  
 
+  // Renderizamos los títulos y comentarios para cada categoría en la lista "Watercooler"
   watercoolerPosts.forEach((post) => {
     const listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
@@ -179,15 +169,9 @@ const renderAside = (data) => {
 
     watercoolerList.appendChild(listItem);
 
+    // Agregar el manejador de eventos para el elemento de la lista
     listItem.addEventListener('click', () => {
-      getUniquePost(post.id).then((postDetails) => {
-        // Aquí tienes los detalles del post específico en la variable postDetails
-        // Puedes hacer lo que necesites con estos detalles, por ejemplo, redirigir a la página de detalle del post
-        console.log('Detalles del post:', postDetails);
-        redirectToPostDetail(post.id);
-      }).catch((error) => {
-        console.error('Error al obtener los detalles del post:', error);
-      });
+      redirectToPostDetail(post.id);
     });
   });
 
@@ -196,6 +180,11 @@ const renderAside = (data) => {
   asideContainer.appendChild(watercoolerList);
 };
 
-
-// Llamamos a la función para renderizar el aside con los post filtrados por los tags
+// Llamamos a la función para renderizar el aside con los posts filtrados por los tags
 renderAside(data);
+
+// Función para redireccionar a la página de detalle del post con el ID correspondiente
+const redirectToPostDetail = (postId) => {
+  window.location.href = `views/post.html?id=${postId}`;
+
+};
