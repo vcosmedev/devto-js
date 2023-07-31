@@ -1,6 +1,12 @@
 import { getExplicitDate, getPPM } from './modules/time.js';
 import { postPosts } from './modules/api.js';
 
+const inputimage = document.getElementById('link-image');
+
+document.getElementById('btn-link-image').addEventListener('click', () => {
+  inputimage.classList.toggle('d-none');
+});
+
 let data = {};
 let validate = true;
 
