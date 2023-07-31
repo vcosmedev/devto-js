@@ -82,6 +82,31 @@
               </form>
             </div>
           </div>
+          <div class="d-flex gap-3" id="authentication-top-nav-actions">
+            <span class="hidden m:block">
+              <a
+                href="/enter"
+                class="c-link c-link--block mr-2 whitespace-nowrap ml-auto"
+                data-no-instant=""
+              >
+                <button class="btn btn-outline-primary d-none d-md-block">
+                  Log in
+                </button>
+              </a>
+            </span>
+
+            <a
+              href="/enter?state=new-user"
+              data-tracking-id="ca_top_nav"
+              data-tracking-source="top_navbar"
+              class="c-cta c-cta--branded whitespace-nowrap mr-2"
+              data-no-instant=""
+            >
+              <button class="btn btn-outline-primary d-none d-md-block">
+                Create Account
+              </button>
+            </a>
+          </div>
           <div class="d-flex">
             <a href="views/create.html" class="text-decoration-none">
               <button class="btn btn-outline-primary d-none d-md-block">
