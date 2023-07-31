@@ -12,7 +12,6 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../css/post_style.css" />
   </head>
   <body>
@@ -72,7 +71,7 @@
                   >Have a password? Continue with your email address</span
                 >
               </div>
-              <form action="" class="login__form">
+              <form action="" class="login__form" id="login-form">
                 <div class="login__field-container">
                   <label
                     for="user_email"
@@ -118,6 +117,7 @@
                 </div>
                 <div class="login__form--continue">
                   <button
+                    id="login-button"
                     type="submit"
                     name="commit"
                     value="Continue"
@@ -277,5 +277,6 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="../js/login.js"></script>
   </body>
 </html>
