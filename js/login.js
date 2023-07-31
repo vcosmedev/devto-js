@@ -8,12 +8,3 @@ document.getElementById('login-button').addEventListener('click', (event) => {
   );
   window.open('../index.html', '_self');
 });
-
-// document.getElementById('nav-wrapper').innerHTML = createNavbar(token);
-
-// document.getElementById('logout-button').addEventListener('click', async () => {
-//   localStorage.removeItem('token');
-//   window.open('../views/index.html', '_self');
-// });
-
-// document.getElementById('nav-wrapper').innerHTML = createNavbar(token);
