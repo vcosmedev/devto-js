@@ -39,8 +39,9 @@ const createData = (dataobj) => {
   dataobj['relevant'] = random % 2 == 0 ? true : false;
   dataobj['rank'] = random;
 
-  const processtags = dataobj['tags'].split(', ');
-  dataobj['tags'] = processtags;
+  const processtags = dataobj['tags'].split(' ');
+
+  dataobj['tags'] = processtags.map((item) => '#' + item);
 
   const words = '' + dataobj['content'];
   dataobj['readtime'] = getPPM(words);

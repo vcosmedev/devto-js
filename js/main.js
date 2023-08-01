@@ -38,6 +38,8 @@ const renderData = (array) => {
 
     main.appendChild(cardpost);
   });
+
+  document.getElementById('no-data').classList.add('d-none');
 };
 
 renderData(orderData(data, 'relevant'));
@@ -49,8 +51,6 @@ const cleanMain = () => {
 const order = document.querySelectorAll('.data-item');
 let orderactive = document.querySelector('.main__title__selected');
 let curentdata;
-
-
 
 order.forEach((item) => {
   item.addEventListener('click', ({ target }) => {
@@ -67,9 +67,26 @@ order.forEach((item) => {
   });
 });
 
+// Registrar lo que se escribe en el input
+document.getElementById('search-input').addEventListener('keyup', (event) => {
+  let value = event.target.value;
+  let filteredData = data.filter((item) =>
+    item.title.toLowerCase().includes(value.toLowerCase())
+  );
+  cleanMain();
+  // renderData(orderData(filteredData, 'relevant'));
+  renderData(filteredData);
 
+  const nodata = document.getElementById('no-data');
 
-renderAside(data, 'aside__main')
+  if (filteredData.length === 0) {
+    nodata.classList.remove('d-none');
+  } else {
+    nodata.classList.add('d-none');
+  }
+});
+
+renderAside(data, 'aside__main');
 //Aside
 const renderPostAside = (data) => {
   const random = Math.floor(Math.random() * data.length);
@@ -79,4 +96,4 @@ const renderPostAside = (data) => {
   asidemain.prepend(post);
 };
 
-renderPostAside(data,'aside__main');
+renderPostAside(data, 'aside__main');
