@@ -2,7 +2,6 @@
 const renderAside = (data, container) => {
   const asideContainer = document.getElementById(container);
 
-  
   asideContainer.innerHTML = '';
 
   // obtener tres elementos aleatorios de un arreglo
@@ -12,8 +11,10 @@ const renderAside = (data, container) => {
   };
 
   //  posts por las categorías "Discuss" y "Watercooler"
-  const discussPosts = data.filter(post => post.tags.includes('#discuss'));
-  const watercoolerPosts = data.filter(post => post.tags.includes('#watercooler'));
+  const discussPosts = data.filter((post) => post.tags.includes('#discuss'));
+  const watercoolerPosts = data.filter((post) =>
+    post.tags.includes('#watercooler')
+  );
 
   // posts aleatorios para cada categoría
   const randomDiscussPosts = getRandomElements(discussPosts, 3);
@@ -41,7 +42,10 @@ const renderAside = (data, container) => {
   const createCommentsElement = (commentsCount) => {
     const commentsElement = document.createElement('p');
     commentsElement.classList.add('mb-0', 'comments-text'); // Agregar la clase "comments-text"
-    const commentsText = commentsCount === 1 ? `${commentsCount} Comentario` : `${commentsCount} Comentarios`;
+    const commentsText =
+      commentsCount === 1
+        ? `${commentsCount} Comentario`
+        : `${commentsCount} Comentarios`;
     commentsElement.textContent = commentsText;
     return commentsElement;
   };
@@ -50,6 +54,7 @@ const renderAside = (data, container) => {
   randomDiscussPosts.forEach((post) => {
     const listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
+    listItem.style.cssText = 'cursor: pointer';
 
     const titleElement = document.createElement('h5');
     titleElement.textContent = post.title;
@@ -72,6 +77,7 @@ const renderAside = (data, container) => {
   randomWatercoolerPosts.forEach((post) => {
     const listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
+    listItem.style.cssText = 'cursor: pointer';
 
     const titleElement = document.createElement('h5');
     titleElement.textContent = post.title;
@@ -89,8 +95,8 @@ const renderAside = (data, container) => {
       redirectToPostDetail(post.id);
     });
   });
-// listas al aside
-  
+  // listas al aside
+
   asideContainer.appendChild(discussList);
   asideContainer.appendChild(watercoolerList);
 };
@@ -101,6 +107,5 @@ const renderAside = (data, container) => {
 // Función para redireccionar a la página de detalle del post con el ID correspondiente
 const redirectToPostDetail = (postId) => {
   window.location.href = `views/post.html?id=${postId}`;
-
 };
-export { renderAside }
+export { renderAside };
