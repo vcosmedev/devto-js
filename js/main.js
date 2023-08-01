@@ -1,6 +1,9 @@
-import { createPost } from './modules/elements.js';
+import { createPost, createSimplePost } from './modules/elements.js';
 import { getPosts } from './modules/api.js';
 import { orderData } from './modules/orders.js';
+import { renderAside } from './modules/Aside.js';
+
+
 import { tokenValidation } from './modules/auth.js';
 
 let loggedButtonsValidation = document.getElementById(
@@ -8,6 +11,7 @@ let loggedButtonsValidation = document.getElementById(
 );
 loggedButtonsValidation.innerHTML = '';
 loggedButtonsValidation.append(tokenValidation());
+
 
 /* const authorpic = document.getElementById('author-picture');
 authorpic.src = localStorage.getItem('image');
@@ -23,18 +27,12 @@ const processData = async () => {
 
     currobj['id'] = key;
 
-    //console.log(currobj['tags']);
-
     return [...accum, currobj];
   }, []);
   return array;
 };
 
 const data = await processData();
-
-// PARA OBTENER TAGS ->
-data.forEach((post, i) => console.log(i + 1, post['tags']));
-//
 
 const main = document.getElementById('cards-main');
 
@@ -50,6 +48,8 @@ const renderData = (array) => {
 
     main.appendChild(cardpost);
   });
+
+  document.getElementById('no-data').classList.add('d-none');
 };
 
 renderData(orderData(data, 'relevant'));
@@ -84,5 +84,26 @@ document.getElementById('search-input').addEventListener('keyup', (event) => {
     item.title.toLowerCase().includes(value.toLowerCase())
   );
   cleanMain();
-  renderData(orderData(filteredData, 'relevant'));
+  // renderData(orderData(filteredData, 'relevant'));
+  renderData(filteredData);
+
+  const nodata = document.getElementById('no-data');
+
+  if (filteredData.length === 0) {
+    nodata.classList.remove('d-none');
+  } else {
+    nodata.classList.add('d-none');
+  }
 });
+
+renderAside(data, 'aside__main');
+//Aside
+const renderPostAside = (data) => {
+  const random = Math.floor(Math.random() * data.length);
+  const asidemain = document.getElementById('aside__main');
+  const post = createSimplePost(data[random]);
+
+  asidemain.prepend(post);
+};
+
+renderPostAside(data, 'aside__main');
