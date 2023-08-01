@@ -19,15 +19,10 @@ const processData = async () => {
 
     return [...accum, currobj];
   }, []);
-
   return array;
 };
 
 const data = await processData();
-
-// PARA OBTENER TAGS ->
-data.forEach((post, i) => console.log(i + 1, post['tags']));
-//
 
 const main = document.getElementById('cards-main');
 
