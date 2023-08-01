@@ -1,6 +1,7 @@
 import { createPost, createSimplePost } from './modules/elements.js';
 import { getPosts } from './modules/api.js';
 import { orderData } from './modules/orders.js';
+import { renderAside } from './modules/Aside.js';
 
 /* const authorpic = document.getElementById('author-picture');
 authorpic.src = localStorage.getItem('image');
@@ -69,11 +70,9 @@ order.forEach((item) => {
   });
 });
 
-
-
 //Aside
 
-const renderPostAside = (data) => {
+/*const renderPostAside = (data) => {
   const random = Math.floor(Math.random() * data.length);
   const asidemain = document.getElementById('aside__main');
   const post = createSimplePost(data[random]);
@@ -82,3 +81,5 @@ const renderPostAside = (data) => {
 };
 
 renderPostAside(data);
+*/
+renderAside(data, 'aside__main')
