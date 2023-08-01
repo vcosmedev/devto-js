@@ -1,6 +1,9 @@
 const createLogoutedButtons = () => {
   // CREATE LOGIN BUTTON
+  const logoutButtonsContainer = document.createElement('div');
+
   const loginButtonContainer = document.createElement('div');
+  loginButtonContainer.classList.add('d-flex', 'gap-3');
 
   const loginButtonSpan = document.createElement('span');
   loginButtonSpan.classList.add('hidden', 'm:block');
@@ -51,6 +54,17 @@ const createLogoutedButtons = () => {
     'd-md-block'
   );
   createAccountButton.innerText = 'Create Account';
+
+  loginButtonAnchor.append(loginButton);
+  loginButtonSpan.append(loginButtonAnchor);
+  loginButtonContainer.append(loginButtonSpan);
+
+  createAccountAnchorButton.append(createAccountButton);
+  createAccountButtonContainer.append(createAccountAnchorButton);
+  loginButtonContainer.append(createAccountAnchorButton);
+
+  logoutButtonsContainer.append(loginButtonContainer);
+  logoutButtonsContainer.append(loginButtonContainer);
 
   return loginButtonContainer;
 };
