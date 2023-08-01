@@ -23,8 +23,6 @@ const processData = async () => {
   return array;
 };
 
-
-
 const data = await processData();
 
 // PARA OBTENER TAGS ->

@@ -1,14 +1,25 @@
-
-
-
 // Función para renderizar el aside con los posts filtrados por los tags
 const renderAside = (data, container) => {
   const asideContainer = document.getElementById(container);
 
-  // Limpiamos el aside para evitar duplicados
+  
   asideContainer.innerHTML = '';
 
-  // Creamos una lista para "Discuss"
+  // obtener tres elementos aleatorios de un arreglo
+  const getRandomElements = (array, numElements) => {
+    const shuffledArray = array.sort(() => Math.random() - 0.5);
+    return shuffledArray.slice(0, numElements);
+  };
+
+  //  posts por las categorías "Discuss" y "Watercooler"
+  const discussPosts = data.filter(post => post.tags.includes('#discuss'));
+  const watercoolerPosts = data.filter(post => post.tags.includes('#watercooler'));
+
+  // posts aleatorios para cada categoría
+  const randomDiscussPosts = getRandomElements(discussPosts, 3);
+  const randomWatercoolerPosts = getRandomElements(watercoolerPosts, 3);
+
+  // lista para "Discuss"
   const discussList = document.createElement('ul');
   discussList.classList.add('list-group', 'mb-4');
 
@@ -17,7 +28,7 @@ const renderAside = (data, container) => {
   discussTitle.textContent = '#discuss';
   discussList.appendChild(discussTitle);
 
-  // Creamos una lista para "Watercooler"
+  // lista para "Watercooler"
   const watercoolerList = document.createElement('ul');
   watercoolerList.classList.add('list-group', 'mb-4');
 
@@ -35,12 +46,8 @@ const renderAside = (data, container) => {
     return commentsElement;
   };
 
-  // Filtramos los posts por las categorías "Discuss" y "Watercooler"
-  const discussPosts = data.filter(post => post.tags.includes('#discuss')).slice(0, 3);
-  const watercoolerPosts = data.filter(post => post.tags.includes('#watercooler')).slice(0, 3);
-
-  // Renderizamos los títulos y comentarios para cada categoría en la lista "Discuss"
-  discussPosts.forEach((post) => {
+  // títulos y comentarios para cada categoría en la lista "Discuss"
+  randomDiscussPosts.forEach((post) => {
     const listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
 
@@ -55,14 +62,14 @@ const renderAside = (data, container) => {
 
     discussList.appendChild(listItem);
 
-    // Agregar el manejador de eventos para el elemento de la lista
+    //  manejador de eventos para el elemento de la lista
     listItem.addEventListener('click', () => {
       redirectToPostDetail(post.id);
     });
   });
 
-  // Renderizamos los títulos y comentarios para cada categoría en la lista "Watercooler"
-  watercoolerPosts.forEach((post) => {
+  // ítulos y comentarios para cada categoría en la lista "Watercooler"
+  randomWatercoolerPosts.forEach((post) => {
     const listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
 
@@ -77,18 +84,18 @@ const renderAside = (data, container) => {
 
     watercoolerList.appendChild(listItem);
 
-    // Agregar el manejador de eventos para el elemento de la lista
+    //  manejador de eventos para el elemento de la lista
     listItem.addEventListener('click', () => {
       redirectToPostDetail(post.id);
     });
   });
-
-  // Agregamos las listas al aside
+// listas al aside
+  
   asideContainer.appendChild(discussList);
   asideContainer.appendChild(watercoolerList);
 };
 
-// Llamamos a la función para renderizar el aside con los posts filtrados por los tags
+// función para renderizar el aside con los posts filtrados por los tags
 //renderAside(data);
 
 // Función para redireccionar a la página de detalle del post con el ID correspondiente
