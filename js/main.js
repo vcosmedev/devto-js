@@ -20,7 +20,6 @@ const processData = async () => {
 
     return [...accum, currobj];
   }, []);
-
   return array;
 };
 
@@ -69,4 +68,14 @@ order.forEach((item) => {
       orderactive = item;
     }
   });
+});
+
+// Registrar lo que se escribe en el input
+document.getElementById('search-input').addEventListener('keyup', (event) => {
+  let value = event.target.value;
+  let filteredData = data.filter((item) =>
+    item.title.toLowerCase().includes(value.toLowerCase())
+  );
+  cleanMain();
+  renderData(orderData(filteredData, 'relevant'));
 });

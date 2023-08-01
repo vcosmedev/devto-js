@@ -9,8 +9,23 @@ const randomImage = () => {
   return images[Math.floor(Math.random() * 3)];
 };
 
-//PONER EN LOCALSTORAGE COMO "image" y despues poner el campo de usuario de login en author
-/*
-localStorage.setItem('image', randomImage())
-localStorage.setItem('author', 'VALUE DE USER/NOMBRE')
-*/
+
+document.getElementById('login-button').addEventListener('click', (event) => {
+  event.preventDefault(); // method that cancels the event if it is cancelable
+  localStorage.setItem(
+    'token',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+  );
+
+  const getAuthor = document.getElementById('user_email');
+  const getValueAuthor = getAuthor.value.split('@')[0].toLowerCase();
+  const capitalizeFirstLetter =
+    getValueAuthor.charAt(0).toUpperCase() + getValueAuthor.slice(1);
+  console.log('getValueAuthor', capitalizeFirstLetter);
+
+  localStorage.setItem('image', randomImage());
+  localStorage.setItem('author', capitalizeFirstLetter);
+  window.open('../index.html', '_self');
+});
+
+
