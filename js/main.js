@@ -3,6 +3,16 @@ import { getPosts } from './modules/api.js';
 import { orderData } from './modules/orders.js';
 import { renderAside } from './modules/Aside.js';
 
+
+import { tokenValidation } from './modules/auth.js';
+
+let loggedButtonsValidation = document.getElementById(
+  'authentication-top-nav-actions'
+);
+loggedButtonsValidation.innerHTML = '';
+loggedButtonsValidation.append(tokenValidation());
+
+
 /* const authorpic = document.getElementById('author-picture');
 authorpic.src = localStorage.getItem('image');
 authorpic.classList.remove('d-none'); */
