@@ -15,306 +15,375 @@
     <link rel="stylesheet" href="../css/post_style.css" />
   </head>
   <body>
-    <div class="main">
-      <div class="card__login" style="width: 40rem">
-        <div class="card-body text-center">
-          <div class="registration__content">
-            <h1 class="registration__title mb-0">
-              Welcome to the DEV community
-            </h1>
-            <p class="registration__description mb-4">
-              Dev community is a community of 1,082,605 amazing developers
-            </p>
-          </div>
-          <div class="registration__actions">
-            <div class="registration__actions--providers text-white">
-              <button
-                class="registration__action--option d-flex justify-content-center bg-dark rounded text-white fw-bold p-3"
-              >
-                <img
-                  class="login__icon--color me-2"
-                  src="./assets/icons/1icon-apple.svg"
-                  alt=""
-                />
-                <span>Continue with Apple</span>
-              </button>
-              <button
-                class="registration__action--option d-flex justify-content-center forem-bg rounded text-white fw-bold p-3"
-              >
-                <img class="me-2" src="./assets/icons/2icon-forem.svg" alt="" />
-                <span>Continue with Forem</span>
-              </button>
-              <button
-                class="registration__action--option d-flex justify-content-center bg-secondary rounded text-white fw-bold p-3"
-              >
-                <img
-                  class="me-2 text-light"
-                  src="./assets/icons/3icon-github-login.svg"
-                  alt=""
-                />
-                <span> Continue with GitHub</span>
-              </button>
-              <button
-                class="registration__action--option d-flex justify-content-center twitter-bg rounded text-white fw-bold p-3"
-              >
-                <img
-                  class="me-2"
-                  class="img__twitter"
-                  src="./assets/icons/4icon-twitter-login.svg"
-                />
-                <span>Continue with Twitter</span>
-              </button>
-            </div>
-            <div class="registration__actions--email">
-              <div class="registration__hr p-4">
-                <span class="registration__hr-label"
-                  >Have a password? Continue with your email address</span
-                >
-              </div>
-              <form action="" class="login__form" id="login-form">
-                <div class="login__field-container">
-                  <label
-                    for="user_email"
-                    class="email-label d-flex justify-content-start p-3 fw-bold"
-                    >Email</label
-                  >
+    <!-- NAV -->
+    <div class="nav-wrapper">
+    <header class="sticky-top">
+      <nav class="navbar p-0 px-3 bg-white nav__container">
+        <div class="container-xl p-0 justify-content-between flex-nowrap">
+          <div class="d-flex">
+            <button
+              class="navbar-toggler mx-md-1 me-2 border-0 d-md-none px-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">
+              <img
+                src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+                alt="Devto Logo"
+                height="40"
+              />
+            </a>
+
+            <div class="d-none d-md-block m-auto nav__form__container">
+              <form class="d-flex form__search" role="search">
+                <div class="input-group">
                   <input
-                    type="email"
-                    id="user_email"
-                    class="email-field form-control"
+                    id="search-input"
+                    type="text"
+                    class="form-control border-end-0"
+                    placeholder="Search..."
+                    aria-label="Buscar"
+                    aria-describedby="basic-addon1"
                   />
-                </div>
-                <div class="login__field-container">
-                  <label
-                    for="user_password"
-                    class="password-label d-flex justify-content-start p-3 fw-bold"
-                    >Password</label
-                  >
-                  <input
-                    type="password"
-                    id="user_password"
-                    class="password-field form-control"
-                  />
-                </div>
-                <div class="login__checkbox d-flex justify-content-start p-3">
-                  <input
-                    name="user[remember_me]"
-                    type="hidden"
-                    value="0"
-                    autocomplete="off"
-                  />
-                  <input
-                    type="checkbox"
-                    checked="checked"
-                    class="checkbox_box me-2"
-                    name="user[remember_me]"
-                    id="user_remember_me"
-                    value="1"
-                  />
-                  <label for="user_remember_me" class="checkbox-label"
-                    >Remember me</label
-                  >
-                </div>
-                <div class="login__form--continue">
-                  <button
-                    id="login-button"
-                    type="submit"
-                    name="commit"
-                    value="Continue"
-                    data-disable-with="Continue"
-                    class="continue-btn--lw-100 btn btn-primary w-100 p-2"
-                  >
-                    Continue
+                  <button class="border-0 bg-white p-0 search__button">
+                    <span
+                      class="bg-white border-1 border-start-0 rounded-0 rounded-end input-group-text search__hover"
+                      id="basic-addon1"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        role="img"
+                        aria-labelledby="agtkixkainaiofuhj4o3hunp3uvwl1y6"
+                        class="crayons-icon"
+                      >
+                        <title id="agtkixkainaiofuhj4o3hunp3uvwl1y6">
+                          Search
+                        </title>
+                        <path
+                          d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
+                        ></path>
+                      </svg>
+                    </span>
                   </button>
                 </div>
               </form>
-              <p class="pt-6 fs-s align-center pt-4">
-                <a
-                  href="https://dev.to/users/password/new"
-                  class="text-decoration-none"
-                  >I forgot my password</a
-                >
-              </p>
             </div>
           </div>
+          <div
+            class="d-flex align-items-center"
+            id="authentication-top-nav-actions"
+          >
+          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer
-      class="d-flex flex-column align-items-center justify-content-center py-4 text-center footer__container"
-      style="font-size: 0.8rem"
-    >
-      <p>
-        <a href="" class="text-decoration-none footer__a">DEV Community</a> — A
-        constructive and inclusive social network for software developers. With
-        you every step of your journey.
-      </p>
-      <ul
-        class="d-flex justify-content-center flex-wrap p-0 footer_ul__container"
-        style="font-size: 0.8rem"
-      >
-        <li class="nav-link d-flex align-items-center">
-          <a href="/"> Home </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/listings"> Listings </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/pod"> Podcasts </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/videos"> Videos </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/tags"> Tags </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/faq"> FAQ </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="https://shop.forem.com"> Forem Shop </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/sponsorships"> Sponsors </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/about"> About </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/contact"> Contact </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/guides"> Guides </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/software-comparisons"> Software comparisons </a>
-        </li>
-      </ul>
-      <ul
-        class="d-flex justify-content-center flex-wrap p-0 footer_ul__container footer__container__line__height"
-      >
-        <li class="nav-link d-flex align-items-center">
-          <a href="/code-of-conduct"> Code of Conduct </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/privacy"> Privacy Policy </a>
-          <img
-            src="../sources/images/dot-svgrepo-com.svg
-            "
-            width="4"
-            height="4"
-            class="mx-2"
-          />
-        </li>
-        <li class="nav-link d-flex align-items-center">
-          <a href="/terms"> Terms of use </a>
-        </li>
-      </ul>
-      <p>
-        Built on <a href="" class="text-decoration-none footer__a">Forem</a> —
-        the
-        <a href="" class="text-decoration-none footer__a">open source</a>
-        software that powers
-        <a href="" class="text-decoration-none footer__a">DEV</a> and other
-        inclusive communities.
-      </p>
-      <p>
-        Made with love and
-        <a href="" class="text-decoration-none footer__a">Ruby on Rails</a>. DEV
-        Community © 2016 - 2023.
-      </p>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
-    <script type="module" src="../js/login.js"></script>
+        <div class="main-wrapper">
+          <div class="main d-flex justify-content-center">
+            <div class="card__login rounded" style="width: 40rem">
+              <div class="card-body text-center">
+                <div class="registration__content">
+                  <h1 class="registration__title mb-0">
+                  Welcome to the DEV community
+                  </h1>
+                  <p class="registration__description mb-4">
+                  DEV Community is a community of 1,111,112 amazing developers
+                  </p>
+                </div>
+                <div class="registration__actions">
+                  <div class="registration__actions--providers text-white">
+                    <button
+                    class="border border-0 d-flex justify-content-center apple-bg rounded text-white fw-light p-3"
+                    >
+                      <img
+                        class="login__icon--color me-2"
+                        src="../sources/images/1icon-apple.svg"
+                        alt=""
+                      />
+                      <span>Continue with Apple</span>
+                    </button>
+                    <button
+                      class="border border-0 registration__action--option d-flex justify-content-center forem-bg rounded text-white fw-light p-3"
+                    >
+                      <img class="me-2" src="../sources/images/2icon-forem.svg" alt="" />
+                      <span>Continue with Forem</span>
+                    </button>
+                    <button
+                      class="border border-0 registration__action--option d-flex justify-content-center github-bg rounded text-white fw-light p-3"
+                    >
+                      <img
+                        class="me-2 text-light"
+                        src="../sources/images/3icon-github-login.svg"
+                        alt=""
+                      />
+                      <span> Continue with GitHub</span>
+                    </button>
+                    <button
+                      class="border border-0 registration__action--option d-flex justify-content-center twitter-bg rounded text-white fw-light p-3"
+                    >
+                      <img
+                        class="me-2"
+                        class="img__twitter"
+                        src="../sources/images/4icon-twitter-login.svg"
+                      />
+                      <span>Continue with Twitter</span>
+                    </button>
+                  </div>
+                  <div class="registration__actions--email">
+                    <div class="registration__hr p-4">
+                      <span class="registration__hr-label"
+                        >Have a password? Continue with your email address</span
+                      >
+                    </div>
+                    <form action="" class="login__form" id="login-form">
+                      <div class="login__field-container">
+                        <label
+                          for="user_email"
+                          class="email-label d-flex justify-content-start p-3 fw-bold"
+                          >Email</label
+                        >
+                        <input
+                          type="email"
+                          id="user_email"
+                          class="email-field form-control"
+                        />
+                      </div>
+                      <div class="login__field-container">
+                        <label
+                          for="user_password"
+                          class="password-label d-flex justify-content-start p-3 fw-bold"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          id="user_password"
+                          class="password-field form-control"
+                        />
+                      </div>
+                      <div class="login__checkbox d-flex justify-content-start p-3">
+                        <input
+                          name="user[remember_me]"
+                          type="hidden"
+                          value="0"
+                          autocomplete="off"
+                        />
+                        <input
+                          type="checkbox"
+                          checked="checked"
+                          class="checkbox_box me-2"
+                          name="user[remember_me]"
+                          id="user_remember_me"
+                          value="1"
+                        />
+                        <label for="user_remember_me" class="checkbox-label"
+                          >Remember me</label
+                        >
+                      </div>
+                      <div class="login__form--continue">
+                        <button
+                          id="login-button"
+                          type="submit"
+                          name="commit"
+                          value="Continue"
+                          data-disable-with="Continue"
+                          class="continue-btn--lw-100 btn btn-primary w-100 p-2"
+                        >
+                          Continue
+                        </button>
+                      </div>
+                    </form>
+                    <p class="pt-6 fs-s align-center pt-4">
+                      <a
+                        href="https://dev.to/users/password/new"
+                        class="text-decoration-none fw-light"
+                        >I forgot my password</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FOOTER -->
+          <footer
+            class="d-flex flex-column align-items-center justify-content-center py-4 text-center footer__container"
+            style="font-size: 0.8rem"
+          >
+            <p>
+              <a href="" class="text-decoration-none footer__a">DEV Community</a> — A
+              constructive and inclusive social network for software developers. With
+              you every step of your journey.
+            </p>
+            <ul
+              class="d-flex justify-content-center flex-wrap p-0 footer_ul__container"
+              style="font-size: 0.8rem"
+            >
+              <li class="nav-link d-flex align-items-center">
+                <a href="/"> Home </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/listings"> Listings </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/pod"> Podcasts </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/videos"> Videos </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/tags"> Tags </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/faq"> FAQ </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="https://shop.forem.com"> Forem Shop </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/sponsorships"> Sponsors </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/about"> About </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/contact"> Contact </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/guides"> Guides </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/software-comparisons"> Software comparisons </a>
+              </li>
+            </ul>
+            <ul
+              class="d-flex justify-content-center flex-wrap p-0 footer_ul__container footer__container__line__height"
+            >
+              <li class="nav-link d-flex align-items-center">
+                <a href="/code-of-conduct"> Code of Conduct </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/privacy"> Privacy Policy </a>
+                <img
+                  src="../sources/images/dot-svgrepo-com.svg
+                  "
+                  width="4"
+                  height="4"
+                  class="mx-2"
+                />
+              </li>
+              <li class="nav-link d-flex align-items-center">
+                <a href="/terms"> Terms of use </a>
+              </li>
+            </ul>
+            <p>
+              Built on <a href="" class="text-decoration-none footer__a">Forem</a> —
+              the
+              <a href="" class="text-decoration-none footer__a">open source</a>
+              software that powers
+              <a href="" class="text-decoration-none footer__a">DEV</a> and other
+              inclusive communities.
+            </p>
+            <p>
+              Made with love and
+              <a href="" class="text-decoration-none footer__a">Ruby on Rails</a>. DEV
+              Community © 2016 - 2023.
+            </p>
+          </footer>
+        </div>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+          crossorigin="anonymous"
+        ></script>
+        <script type="module" src="../js/login.js"></script>
   </body>
 </html>
