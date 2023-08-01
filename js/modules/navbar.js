@@ -34,7 +34,7 @@ const createLogoutedButtons = () => {
   const createAccountButtonContainer = document.createElement('div');
 
   const createAccountAnchorButton = document.createElement('a');
-  createAccountAnchorButton.setAttribute('href', '/enter?state=new-user');
+  createAccountAnchorButton.setAttribute('href', '/views/login.html');
   createAccountAnchorButton.setAttribute('data-tracking-id', 'ca_top_nav');
   createAccountAnchorButton.setAttribute('data-tracking-source', 'top_navbar');
   createAccountAnchorButton.classList.add(
