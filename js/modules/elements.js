@@ -222,14 +222,14 @@ const createSimplePost = (data) => {
   cardaux122sp.classList.add('text-body-secondary');
   cardaux122sp.innerText = date;
 
-  let newtitle;
+  /* let newtitle;
   title.length > 25
     ? (newtitle = title.slice(0, 25) + '...')
-    : (newtitle = title);
+    : (newtitle = title); */
 
   const cardaux2h3 = document.createElement('h5');
   cardaux2h3.classList.add('fw-bold');
-  cardaux2h3.innerText = newtitle;
+  cardaux2h3.innerText = title /* newtitle */;
 
   const cardaux22padre = document.createElement('div');
   cardaux22padre.classList.add(
