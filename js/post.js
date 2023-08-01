@@ -30,7 +30,7 @@ const renderPost = (data) => {
   createUniquePost('img-post', img, true);
   createUniquePost('title-post', title, false);
   createUniquePost('content-post', content, false);
-  createUniquePost('comments-image-post', profilePic, true);
+  createUniquePost('comments-image-post', localStorage.getItem('image'), true);
   createUniquePost('comments-total-post', comments, false);
 
   document.getElementById('tags-post').append(createTags(tags));
