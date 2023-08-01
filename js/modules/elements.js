@@ -201,7 +201,7 @@ const createSimplePost = (data) => {
   cardaux1.classList.add('d-flex');
 
   const cardaux2 = document.createElement('div');
-  cardaux2.classList.add('mt-3', 'ps-md-5');
+  cardaux2.classList.add('mt-3');
 
   const cardaux11 = document.createElement('div');
   cardaux11.classList.add('me-3');
@@ -223,7 +223,9 @@ const createSimplePost = (data) => {
   cardaux122sp.innerText = date;
 
   let newtitle;
-  title.length > 25 && (newtitle = title.slice(0, 25) + '...');
+  title.length > 25
+    ? (newtitle = title.slice(0, 25) + '...')
+    : (newtitle = title);
 
   const cardaux2h3 = document.createElement('h5');
   cardaux2h3.classList.add('fw-bold');
