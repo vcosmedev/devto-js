@@ -17,7 +17,6 @@
   </head>
   <body>
     <!-- NAV -->
-    <!-- NAV -->
     <header class="sticky-top">
       <nav class="navbar p-0 px-3 bg-white nav__container">
         <div class="container-xl p-0 justify-content-between flex-nowrap">
@@ -35,7 +34,7 @@
             <a class="navbar-brand" href="../index.html">
               <img
                 src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
-                alt=""
+                alt="Devto Logo"
                 height="40"
               />
             </a>
@@ -44,6 +43,7 @@
               <form class="d-flex form__search" role="search">
                 <div class="input-group">
                   <input
+                    id="search-input"
                     type="text"
                     class="form-control border-end-0"
                     placeholder="Search..."
@@ -77,55 +77,11 @@
               </form>
             </div>
           </div>
-          <div class="d-flex">
-            <a href="create.html">
-              <button class="btn btn-outline-primary d-none d-md-block">
-                Create Post
-              </button>
-            </a>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              role="img"
-              aria-labelledby="agtkixkainaiofuhj4o3hunp3uvwl1y6"
-              class="crayons-icon d-md-none my-auto"
-            >
-              <title id="agtkixkainaiofuhj4o3hunp3uvwl1y6">Search</title>
-              <path
-                d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
-              ></path>
-            </svg>
-
-            <a href="#" class="navbar-nav mx-3 my-auto">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                role="img"
-                aria-labelledby="a4gcjtvbhvh6eh4ee8qmpi1l37goznso"
-                class="crayons-icon"
-              >
-                <title id="a4gcjtvbhvh6eh4ee8qmpi1l37goznso">
-                  Notifications
-                </title>
-                <path
-                  d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z"
-                ></path>
-              </svg>
-            </a>
-            <a href="">
-              <img
-                id="picauthor-nav"
-                alt=""
-                class="navbar-nav rounded-circle me-1"
-                height="40"
-              />
-            </a>
-          </div>
-
+          <div
+            class="d-flex align-items-center"
+            id="authentication-top-nav-actions"
+          ></div>
+          <!-- OFFCANVAS -->
           <div
             class="offcanvas offcanvas-start w-sm-50"
             tabindex="-1"
