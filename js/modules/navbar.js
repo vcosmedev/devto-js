@@ -169,6 +169,13 @@ const createLoggedButtons = () => {
   );
   logoutButton.innerText = 'Log out';
 
+  //Image user
+  const imgcontainer = document.createElement('div');
+  const imglog = document.createElement('img');
+  imglog.src = localStorage.getItem('image');
+  imglog.style.cssText = 'max-height: 40px;';
+  imglog.classList.add('navbar-nav', 'rounded-circle');
+
   logoutButtonAnchor.append(logoutButton);
   logoutButtonSpan.append(logoutButtonAnchor);
   logoutButtonContainer.append(logoutButtonSpan);
@@ -184,9 +191,12 @@ const createLoggedButtons = () => {
   createPostAnchor.append(createPostButton);
   createPostButtonContainer.append(createPostAnchor);
 
+  imgcontainer.appendChild(imglog);
+
   loggedButtonsContainer.append(notificationsContainer);
   loggedButtonsContainer.append(createPostButtonContainer);
   loggedButtonsContainer.append(logoutButtonContainer);
+  loggedButtonsContainer.append(imgcontainer);
 
   return loggedButtonsContainer;
 };
