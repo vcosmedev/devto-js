@@ -25,7 +25,7 @@ const createLogoutedButtons = () => {
     'd-none',
     'd-md-block'
   );
-  loginButton.innerText('Log in');
+  loginButton.innerText = 'Log in';
 
   // CREATE ACCOUNT BUTTON
   const createAccountButtonContainer = document.createElement('div');
@@ -50,11 +50,16 @@ const createLogoutedButtons = () => {
     'd-none',
     'd-md-block'
   );
-  createAccountButton.innerText('Create Account');
+  createAccountButton.innerText = 'Create Account';
+
+  return loginButtonContainer;
 };
 
 const createLoggedButtons = () => {
   // CREATE POST BUTTON
+  const loggedButtonsContainer = document.createElement('div');
+  loggedButtonsContainer.classList.add('d-flex', 'gap-3');
+
   const createPostButtonContainer = document.createElement('div');
 
   const createPostAnchor = document.createElement('a');
@@ -68,7 +73,7 @@ const createLoggedButtons = () => {
     'd-none',
     'd-md-block'
   );
-  createPostButton.innerHTML('Create Post');
+  createPostButton.innerText = 'Create Post';
 
   const createPostSVG = document.createElement('svg');
   createPostSVG.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -84,7 +89,7 @@ const createLoggedButtons = () => {
 
   const createPostTitle = document.createElement('title');
   createPostTitle.setAttribute('id', 'agtkixkainaiofuhj4o3hunp3uvwl1y6');
-  createPostTitle.innerText('Search');
+  createPostTitle.innerText = 'Search';
 
   const createPostPath = document.createElement('path');
   createPostPath.setAttribute(
@@ -101,7 +106,7 @@ const createLoggedButtons = () => {
 
   const notificationsTitle = document.createElement('title');
   notificationsTitle.setAttribute('id', 'a4gcjtvbhvh6eh4ee8qmpi1l37goznso');
-  notificationsTitle.innerText('Notificatons');
+  notificationsTitle.innerText = 'Notificatons';
 
   const notificationsPath = document.createElement('path');
   notificationsPath.setAttribute(
@@ -109,14 +114,14 @@ const createLoggedButtons = () => {
     'M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z'
   );
 
-  // LOGOUT BUTTON
-  const logoutButtonContainer = document.getElementById('div');
-
   const notificationsIMG = document.createElement('img');
   notificationsIMG.setAttribute('id', 'author-picture');
   notificationsIMG.setAttribute('alt', 'Notifications icon');
   notificationsIMG.classList.add('navbar-nav', 'rounded-circle', 'me-1');
   notificationsIMG.setAttribute('height', '40');
+
+  // LOGOUT BUTTON
+  const logoutButtonContainer = document.createElement('div');
 
   const logoutButtonSpan = document.createElement('span');
   logoutButtonSpan.classList.add('hidden', 'm:block');
@@ -148,18 +153,28 @@ const createLoggedButtons = () => {
     'd-none',
     'd-md-block'
   );
-  logoutButton.innerText('Log out');
+  logoutButton.innerText = 'Log out';
+
+  logoutButtonAnchor.append(logoutButton);
+  logoutButtonSpan.append(logoutButtonAnchor);
+  logoutButtonContainer.append(logoutButtonSpan);
+
+  notificationsPath.append(notificationsIMG);
+  notificationsTitle.append(notificationsPath);
+  notificationsAnchor.append(notificationsTitle);
+  notificationsContainer.append(notificationsAnchor);
+
+  createPostTitle.append(createPostPath);
+  createPostSVG.append(createPostTitle);
+  createPostButton.append(createPostSVG);
+  createPostAnchor.append(createPostButton);
+  createPostButtonContainer.append(createPostAnchor);
+
+  loggedButtonsContainer.append(notificationsContainer);
+  loggedButtonsContainer.append(createPostButtonContainer);
+  loggedButtonsContainer.append(logoutButtonContainer);
+
+  return loggedButtonsContainer;
 };
-
-const nav = document.createElement('nav');
-nav.classList.add('navbar', 'p-0', 'px-3', 'bg-white', 'nav__container');
-
-const divContainer = document.createElement('div');
-divContainer.classList.add(
-  'container-xl',
-  'p-0',
-  'justify-content-between',
-  'flex-nowrap'
-);
 
 export { createLogoutedButtons, createLoggedButtons };
