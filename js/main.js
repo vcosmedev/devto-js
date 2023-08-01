@@ -1,4 +1,4 @@
-import { createPost } from './modules/elements.js';
+import { createPost, createSimplePost } from './modules/elements.js';
 import { getPosts } from './modules/api.js';
 import { orderData } from './modules/orders.js';
 
@@ -15,8 +15,6 @@ const processData = async () => {
     const currobj = dataposts[key];
 
     currobj['id'] = key;
-
-    //console.log(currobj['tags']);
 
     return [...accum, currobj];
   }, []);
@@ -70,3 +68,15 @@ order.forEach((item) => {
     }
   });
 });
+
+//Aside
+
+const renderPostAside = (data) => {
+  const random = Math.floor(Math.random() * data.length);
+  const asidemain = document.getElementById('aside__main');
+  const post = createSimplePost(data[random]);
+
+  asidemain.append(post);
+};
+
+renderPostAside(data);
