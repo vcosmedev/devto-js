@@ -1,6 +1,13 @@
 import { getUniquePost } from './modules/api.js';
 import { createUniquePost } from './modules/elements.js';
 import { createTags } from './modules/elements.js';
+import { tokenValidation } from './modules/auth.js';
+
+let loggedButtonsValidation = document.getElementById(
+  'authentication-top-nav-actions'
+);
+loggedButtonsValidation.innerHTML = '';
+loggedButtonsValidation.append(tokenValidation());
 
 const urlparams = new URLSearchParams(location.search);
 

@@ -41,7 +41,9 @@ const createData = (dataobj) => {
 
   const processtags = dataobj['tags'].split(' ');
 
-  dataobj['tags'] = processtags.map((item) => '#' + item);
+  let finaltags = [];
+  processtags.forEach((item) => item.length > 0 && finaltags.push('#' + item));
+  dataobj['tags'] = finaltags;
 
   const words = '' + dataobj['content'];
   dataobj['readtime'] = getPPM(words);
