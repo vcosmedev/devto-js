@@ -1,6 +1,7 @@
-import { createPost } from './modules/elements.js';
+import { createPost, createSimplePost } from './modules/elements.js';
 import { getPosts } from './modules/api.js';
 import { orderData } from './modules/orders.js';
+import { renderAside } from './modules/Aside.js';
 
 /* const authorpic = document.getElementById('author-picture');
 authorpic.src = localStorage.getItem('image');
@@ -49,6 +50,8 @@ const order = document.querySelectorAll('.data-item');
 let orderactive = document.querySelector('.main__title__selected');
 let curentdata;
 
+
+
 order.forEach((item) => {
   item.addEventListener('click', ({ target }) => {
     if (orderactive !== item) {
@@ -64,12 +67,16 @@ order.forEach((item) => {
   });
 });
 
-// Registrar lo que se escribe en el input
-document.getElementById('search-input').addEventListener('keyup', (event) => {
-  let value = event.target.value;
-  let filteredData = data.filter((item) =>
-    item.title.toLowerCase().includes(value.toLowerCase())
-  );
-  cleanMain();
-  renderData(orderData(filteredData, 'relevant'));
-});
+
+
+renderAside(data, 'aside__main')
+//Aside
+const renderPostAside = (data) => {
+  const random = Math.floor(Math.random() * data.length);
+  const asidemain = document.getElementById('aside__main');
+  const post = createSimplePost(data[random]);
+
+  asidemain.prepend(post);
+};
+
+renderPostAside(data,'aside__main');
