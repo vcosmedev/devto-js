@@ -1,5 +1,3 @@
-// import { createNavbar } from './modules/dom.js';
-
 //PARA GENERAR IMAGEN ALEATORIA
 const randomImage = () => {
   const images = [
@@ -10,6 +8,7 @@ const randomImage = () => {
 
   return images[Math.floor(Math.random() * 3)];
 };
+
 
 document.getElementById('login-button').addEventListener('click', (event) => {
   event.preventDefault(); // method that cancels the event if it is cancelable
@@ -29,8 +28,4 @@ document.getElementById('login-button').addEventListener('click', (event) => {
   window.open('../index.html', '_self');
 });
 
-//PONER EN LOCALSTORAGE COMO "image" y despues poner el campo de usuario de login en author
-/*
-localStorage.setItem('image', randomImage())
-localStorage.setItem('author', 'VALUE DE USER/NOMBRE')
-*/
+
