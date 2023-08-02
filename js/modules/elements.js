@@ -178,7 +178,7 @@ const createPost = (data, isfirst) => {
 };
 
 const createSimplePost = (data) => {
-  const { id, author, profilePic, date, img, title } = data;
+  const { id, author, profilePic, date, img, title, content } = data;
 
   const divpadre = document.createElement('div');
   divpadre.classList.add('card');
@@ -247,7 +247,21 @@ const createSimplePost = (data) => {
   const cardaux22padre12 = document.createElement('div');
   cardaux22padre12.classList.add('d-flex', 'align-items-center');
 
+  const bodycontent = document.createElement('div');
+  bodycontent.classList.add('px-3');
+
+  const contentp = document.createElement('p');
+
+  let newcontent;
+  content.length > 25
+    ? (newcontent = content.slice(0, 70) + '...')
+    : (newcontent = content);
+
+  contentp.innerText = newcontent;
+
   //APPENDS
+
+  bodycontent.appendChild(contentp);
 
   const cardaux22padre12smll2 = document.createElement('small');
   cardaux22padre12smll2.classList.add('ms-1', 'd-flex', 'd-sm-none');
@@ -273,6 +287,7 @@ const createSimplePost = (data) => {
   divbody.append(cardaux1, cardaux2);
 
   divpadre.appendChild(divbody);
+  divpadre.appendChild(bodycontent);
 
   return divpadre;
 };
