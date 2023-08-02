@@ -1,11 +1,40 @@
+const randomColorHashtag = () => {
+  const coloresArcoiris = [
+    '#FF0000', // Rojo
+    '#FF7F00', // Naranja
+    //'#FFFF00', // Amarillo
+    //'#00FF00', // Verde
+    '#0000FF', // Azul
+    '#4B0082', // Índigo
+    '#9400D3', // Violeta
+  ];
+
+  return coloresArcoiris[Math.floor(Math.random() * coloresArcoiris.length)];
+};
+
 const createTags = (arrtags) => {
   const container = document.createElement('div');
   container.classList.add('mb-3');
 
   arrtags.forEach((tag) => {
     const a = document.createElement('a');
-    a.classList.add('me-2');
+    a.classList.add('me-2', 'text-decoration-none' /* , 'text-black' */);
     a.innerText = tag;
+
+    /* const initial = tag.charAt(0);
+
+    if (initial === '#') {
+      const auxspan = document.createElement('span');
+      auxspan.innerText = '#';
+      auxspan.style.cssText = `color: ${randomColorHashtag()}`;
+      a.append(auxspan);
+      a.innerText = tag;
+      console.log(tag);
+    } else {
+      a.innerText = tag;
+    } */
+
+    a.style.cssText = `color: ${randomColorHashtag()}`;
 
     container.appendChild(a);
   });
