@@ -4,4 +4,6 @@ const token = localStorage.getItem('token');
 const tokenValidation = () =>
   token ? createLoggedButtons() : createLogoutedButtons();
 
-export { tokenValidation };
+const booleanAuth = () => (token ? true : false);
+
+export { tokenValidation, booleanAuth };

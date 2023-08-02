@@ -1,5 +1,8 @@
 import { getExplicitDate, getPPM } from './modules/time.js';
 import { postPosts } from './modules/api.js';
+import { booleanAuth } from './modules/auth.js';
+
+!booleanAuth() && window.open('../views/login.html', '__self');
 
 const inputimage = document.getElementById('link-image');
 
@@ -9,6 +12,7 @@ document.getElementById('btn-link-image').addEventListener('click', () => {
 
 let data = {};
 let validate = true;
+!booleanAuth() && (validate = false);
 
 //ELIMINAR
 const randomImage = () => {
@@ -56,5 +60,7 @@ document.getElementById('btn-submit').addEventListener('click', () => {
     const objfin = createData(data);
     postPosts(objfin);
     window.open('../index.html');
+  } else {
+    window.location.reload();
   }
 });
