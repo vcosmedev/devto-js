@@ -82,6 +82,12 @@ document.getElementById('search-input').addEventListener('keyup', (event) => {
 
   const nodata = document.getElementById('no-data');
 
+  if (value.length === 0) {
+    orderactive.classList.add('main__title__selected');
+  } else {
+    orderactive.classList.remove('main__title__selected');
+  }
+
   if (filteredData.length === 0) {
     nodata.classList.remove('d-none');
   } else {
