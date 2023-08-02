@@ -21,4 +21,10 @@ const getUniquePost = async (id) => {
   return await res.json();
 };
 
-export { getPosts, postPosts, getUniquePost };
+const getImageAuthor = async () => {
+  const res = await fetch(`https://randomuser.me/api/`);
+
+  return await res.json();
+};
+
+export { getPosts, postPosts, getUniquePost, getImageAuthor };

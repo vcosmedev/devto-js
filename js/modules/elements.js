@@ -1,11 +1,40 @@
+const randomColorHashtag = () => {
+  const coloresArcoiris = [
+    '#FF0000', // Rojo
+    '#FF7F00', // Naranja
+    //'#FFFF00', // Amarillo
+    //'#00FF00', // Verde
+    '#0000FF', // Azul
+    '#4B0082', // Índigo
+    '#9400D3', // Violeta
+  ];
+
+  return coloresArcoiris[Math.floor(Math.random() * coloresArcoiris.length)];
+};
+
 const createTags = (arrtags) => {
   const container = document.createElement('div');
   container.classList.add('mb-3');
 
   arrtags.forEach((tag) => {
     const a = document.createElement('a');
-    a.classList.add('me-2');
+    a.classList.add('me-2', 'text-decoration-none' /* , 'text-black' */);
     a.innerText = tag;
+
+    /* const initial = tag.charAt(0);
+
+    if (initial === '#') {
+      const auxspan = document.createElement('span');
+      auxspan.innerText = '#';
+      auxspan.style.cssText = `color: ${randomColorHashtag()}`;
+      a.append(auxspan);
+      a.innerText = tag;
+      console.log(tag);
+    } else {
+      a.innerText = tag;
+    } */
+
+    a.style.cssText = `color: ${randomColorHashtag()}`;
 
     container.appendChild(a);
   });
@@ -177,9 +206,118 @@ const createPost = (data, isfirst) => {
   return divpadre;
 };
 
+const createSimplePost = (data) => {
+  const { id, author, profilePic, date, img, title, content } = data;
+
+  const divpadre = document.createElement('div');
+  divpadre.classList.add('card');
+  divpadre.style.cssText = 'width: 100%; border-radius: 5px; cursor:pointer';
+
+  divpadre.addEventListener('click', () =>
+    window.open(`./views/post.html?id=${id}`, '_self')
+  );
+
+  const imgprincipal = document.createElement('img');
+  imgprincipal.src = img;
+  imgprincipal.classList.add('card-img-top');
+
+  divpadre.appendChild(imgprincipal);
+
+  const divbody = document.createElement('div');
+  divbody.classList.add('card-body');
+
+  const cardaux1 = document.createElement('div');
+  cardaux1.classList.add('d-flex');
+
+  const cardaux2 = document.createElement('div');
+  cardaux2.classList.add('mt-3');
+
+  const cardaux11 = document.createElement('div');
+  cardaux11.classList.add('me-3');
+
+  const cardaux12 = document.createElement('div');
+
+  const cardaux11image = document.createElement('img');
+  cardaux11image.src = profilePic;
+  cardaux11image.classList.add('rounded-circle');
+  cardaux11image.style.cssText = 'width: 32px; heigth: 32px';
+
+  const cardaux121 = document.createElement('div');
+
+  const cardaux121h6 = document.createElement('h6');
+  cardaux121h6.innerText = `${author} `;
+
+  const cardaux122sp = document.createElement('small');
+  cardaux122sp.classList.add('text-body-secondary');
+  cardaux122sp.innerText = date;
+
+  const cardaux2h3 = document.createElement('h5');
+  cardaux2h3.innerText = title;
+
+  const cardaux22padre = document.createElement('div');
+  cardaux22padre.classList.add(
+    'd-flex',
+    'justify-content-between',
+    'align-items-center'
+  );
+
+  const cardaux22padre1 = document.createElement('div');
+  cardaux22padre1.classList.add('d-flex');
+
+  const cardaux22padre11 = document.createElement('div');
+  cardaux22padre11.classList.add('d-flex', 'align-items-center');
+
+  const cardaux22padre12 = document.createElement('div');
+  cardaux22padre12.classList.add('d-flex', 'align-items-center');
+
+  const bodycontent = document.createElement('div');
+  bodycontent.classList.add('px-3');
+
+  const contentp = document.createElement('p');
+
+  let newcontent;
+  content.length > 25
+    ? (newcontent = content.slice(0, 70) + '...')
+    : (newcontent = content);
+
+  contentp.innerText = newcontent;
+
+  //APPENDS
+
+  bodycontent.appendChild(contentp);
+
+  const cardaux22padre12smll2 = document.createElement('small');
+  cardaux22padre12smll2.classList.add('ms-1', 'd-flex', 'd-sm-none');
+  cardaux22padre12smll2.innerText = '0';
+  cardaux22padre12.append(cardaux22padre12smll2);
+
+  cardaux22padre1.append(cardaux22padre11, cardaux22padre12);
+
+  cardaux22padre.append(cardaux22padre1);
+
+  cardaux2.appendChild(cardaux2h3);
+
+  cardaux2.appendChild(cardaux22padre);
+
+  cardaux121.appendChild(cardaux121h6);
+
+  cardaux12.append(cardaux121, cardaux122sp);
+
+  cardaux11.appendChild(cardaux11image);
+
+  cardaux1.append(cardaux11, cardaux12);
+
+  divbody.append(cardaux1, cardaux2);
+
+  divpadre.appendChild(divbody);
+  divpadre.appendChild(bodycontent);
+
+  return divpadre;
+};
+
 const createUniquePost = (elementid, value, image) => {
   const currentelement = document.getElementById(elementid);
   image ? (currentelement.src = value) : (currentelement.innerText = value);
 };
 
-export { createPost, createUniquePost, createTags };
+export { createPost, createUniquePost, createTags, createSimplePost };

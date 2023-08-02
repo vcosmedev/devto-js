@@ -1,9 +1,20 @@
 import { getExplicitDate, getPPM } from './modules/time.js';
 import { postPosts } from './modules/api.js';
+import { booleanAuth } from './modules/auth.js';
+
+!booleanAuth() && window.open('../views/login.html', '__self');
+
+const inputimage = document.getElementById('link-image');
+
+document.getElementById('btn-link-image').addEventListener('click', () => {
+  inputimage.classList.toggle('d-none');
+});
 
 let data = {};
 let validate = true;
+!booleanAuth() && (validate = false);
 
+//ELIMINAR
 const randomImage = () => {
   const images = [
     'https://yt3.googleusercontent.com/ytc/AOPolaSS99flGOVjbXL1KxlWI1B_-Sv5dUKzRlNtAASbJQ=s900-c-k-c0x00ffffff-no-rj',
@@ -13,6 +24,7 @@ const randomImage = () => {
 
   return images[Math.floor(Math.random() * 3)];
 };
+// ELIMINAR
 
 document
   .getElementById('form-control-post')
@@ -23,15 +35,19 @@ document
 
 const createData = (dataobj) => {
   const random = Math.floor(Math.random() * 10) + 1;
-  dataobj['author'] = 'Oli'; //localStorage.getItem('author');
-  dataobj['profilePic'] = randomImage();
+  dataobj['author'] = localStorage.getItem('author');
+  dataobj['profilePic'] = localStorage.getItem('image');
+
   dataobj['date'] = getExplicitDate(new Date());
   dataobj['comments'] = 0;
   dataobj['relevant'] = random % 2 == 0 ? true : false;
   dataobj['rank'] = random;
 
-  const processtags = dataobj['tags'].split(', ');
-  dataobj['tags'] = processtags;
+  const processtags = dataobj['tags'].split(' ');
+
+  let finaltags = [];
+  processtags.forEach((item) => item.length > 0 && finaltags.push('#' + item));
+  dataobj['tags'] = finaltags;
 
   const words = '' + dataobj['content'];
   dataobj['readtime'] = getPPM(words);
@@ -44,5 +60,7 @@ document.getElementById('btn-submit').addEventListener('click', () => {
     const objfin = createData(data);
     postPosts(objfin);
     window.open('../index.html');
+  } else {
+    window.location.reload();
   }
 });

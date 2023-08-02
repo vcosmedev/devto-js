@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create post</title>
 
+    <link rel="stylesheet" href="../css/global.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +14,235 @@
     />
   </head>
   <body>
-    <div class="container mt-5" id="form-control-post">
+    <!-- HEADER -->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid justify-content-start">
+        <a class="navbar-brand d-none d-md-block" href="../index.html">
+          <img
+            alt="Logo"
+            src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+            height="40"
+            class=""
+          />
+        </a>
+        <span class="my-auto">Create Post</span>
+      </div>
+    </nav>
+    <!-- HEADER -->
+    <!-- MAIN -->
+    <div class="container-xl">
+      <div class="row">
+        <aside class="col-1 d-none d-lg-block"></aside>
+        <main class="col-12 col-md-8 col-lg-7 bg-white p-5">
+          <div class="container-flex rounded" id="form-control-post">
+            <div class="">
+              <div>
+                <button class="btn border border-2 me-5" id="btn-link-image">
+                  Add a cover image
+                </button>
+                <input
+                  type="text"
+                  class="form-control mt-2 d-none"
+                  placeholder="Your image link"
+                  name="img"
+                  id="link-image"
+                />
+              </div>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control border-0 fw-bold w-100"
+                  id="floatingTitle"
+                  placeholder="New post title here..."
+                  style="height: 100px"
+                  name="title"
+                />
+                <label
+                  for="floatingTitle"
+                  style="/* font-size: 50px; */ color: #898a8b"
+                  >New post title here...</label
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control mt-2 border-0"
+                placeholder="Add up to tags..."
+                name="tags"
+              />
+            </div>
+            <div class="d-flex justify-content-between py-3">
+              <div>
+                <button class="btn">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="crayons-icon"
+                  >
+                    <path
+                      d="M8 11h4.5a2.5 2.5 0 0 0 0-5H8v5Zm10 4.5a4.501 4.501 0 0 1-4.5 4.5H6V4h6.5a4.5 4.5 0 0 1 3.256 7.606A4.5 4.5 0 0 1 18 15.5ZM8 13v5h5.5a2.5 2.5 0 0 0 0-5H8Z"
+                    ></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="crayons-icon"
+                  >
+                    <path
+                      d="M15 20H7v-2h2.927l2.116-12H9V4h8v2h-2.927l-2.116 12H15v2Z"
+                    ></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn">
+                  <svg
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="crayons-icon"
+                  >
+                    <path
+                      d="M18.364 15.536 16.95 14.12l1.414-1.414a5.001 5.001 0 0 0-3.531-8.551 5 5 0 0 0-3.54 1.48L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 1 1 9.9 9.9l-1.415 1.414zm-2.828 2.828-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607 1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"
+                    ></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn">
+                  <svg
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="crayons-icon"
+                  >
+                    <path
+                      d="M8 4h13v2H8zM5 3v3h1v1H3V6h1V4H3V3zM3 14v-2.5h2V11H3v-1h3v2.5H4v.5h2v1zm2 5.5H3v-1h2V18H3v-1h3v4H3v-1h2zM8 11h13v2H8zm0 7h13v2H8z"
+                    ></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn">
+                  <svg
+                    height="24"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="crayons-icon"
+                  >
+                    <path
+                      d="M8 4h13v2H8zM4.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 6.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM8 11h13v2H8zm0 7h13v2H8z"
+                    ></path>
+                  </svg>
+                </button>
+                <button type="button" class="btn">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="crayons-icon c-btn__icon"
+                  >
+                    <path
+                      d="M20 5H4v14l9.292-9.294a1 1 0 0 1 1.414 0L20 15.01V5zM2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div>
+                <button type="button" class="btn">
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="crayons-icon c-btn__icon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm0-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm2-5a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a comment here"
+                  id="floatingTextarea-content"
+                  style="height: 100px"
+                  name="content"
+                ></textarea>
+                <label for="floatingTextarea-content"
+                  >Write your post content here...</label
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+        <aside class="col-4 d-none d-md-block">
+          <div
+            class="d-flex flex-column justify-content-center p-3"
+            style="height: 100%; font-size: 16"
+          >
+            <h4 class="fw-bold">Writing a Great Post Title</h4>
+            <p>
+              Think of your post title as a super short (but compelling!)
+              description — like an overview of the actual post in one short
+              sentence.
+            </p>
+            <p>
+              Use keywords where appropriate to help ensure people can find your
+              post by search.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="container-xl">
+      <div class="row">
+        <aside class="col-1 d-none d-lg-block"></aside>
+        <main class="col-12 col-md-8 col-lg-7 d-flex mt-3 p-0">
+          <div class="px-3 px-md-0 d-flex">
+            <button class="btn btn-primary" id="btn-submit">Publish</button>
+            <button class="btn mx-3 d-none d-md-block">Save draft</button>
+            <button class="btn mx-3 d-md-none">Save</button>
+            <button class="btn border-0">
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="crayons-icon c-btn__icon"
+              >
+                <path
+                  d="m12 1 9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+                ></path>
+              </svg>
+            </button>
+            <button class="btn mx-3 d-none d-md-block">
+              Revert new changes
+            </button>
+            <button class="btn mx-3 d-md-none">Revert</button>
+          </div>
+        </main>
+        <aside class="col-4 d-none d-md-block"></aside>
+      </div>
+    </div>
+
+    <!-- <div class="container mt-5" id="form-control-post">
       <div class="form-floating">
         <textarea
           class="form-control"
@@ -37,7 +266,7 @@
       <div class="form-floating">
         <textarea
           class="form-control"
-          placeholder="Leave a comment here"
+          placeholder="tag1, tag2, tag3"
           id="floatingTextarea2"
           style="height: 100px"
           name="tags"
@@ -55,7 +284,7 @@
         <label for="floatingTextarea2">Content</label>
       </div>
       <button class="btn btn-primary mt-3" id="btn-submit">Publish</button>
-    </div>
+    </div> -->
 
     <script src="../js/create.js" type="module"></script>
     <script

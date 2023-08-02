@@ -1,10 +1,14 @@
-import { createPost } from './modules/elements.js';
+import { createPost, createSimplePost } from './modules/elements.js';
 import { getPosts } from './modules/api.js';
 import { orderData } from './modules/orders.js';
+import { renderAside } from './modules/Aside.js';
+import { tokenValidation } from './modules/auth.js';
 
-/* const authorpic = document.getElementById('author-picture');
-authorpic.src = localStorage.getItem('image');
-authorpic.classList.remove('d-none'); */
+let loggedButtonsValidation = document.getElementById(
+  'authentication-top-nav-actions'
+);
+loggedButtonsValidation.innerHTML = '';
+loggedButtonsValidation.append(tokenValidation());
 
 const processData = async () => {
   const dataposts = await getPosts();
@@ -16,19 +20,12 @@ const processData = async () => {
 
     currobj['id'] = key;
 
-    //console.log(currobj['tags']);
-
     return [...accum, currobj];
   }, []);
-
   return array;
 };
 
 const data = await processData();
-
-// PARA OBTENER TAGS ->
-data.forEach((post, i) => console.log(i + 1, post['tags']));
-//
 
 const main = document.getElementById('cards-main');
 
@@ -44,6 +41,8 @@ const renderData = (array) => {
 
     main.appendChild(cardpost);
   });
+
+  document.getElementById('no-data').classList.add('d-none');
 };
 
 renderData(orderData(data, 'relevant'));
@@ -70,3 +69,40 @@ order.forEach((item) => {
     }
   });
 });
+
+// Registrar lo que se escribe en el input
+document.getElementById('search-input').addEventListener('keyup', (event) => {
+  let value = event.target.value;
+  let filteredData = data.filter((item) =>
+    item.title.toLowerCase().includes(value.toLowerCase())
+  );
+  cleanMain();
+  // renderData(orderData(filteredData, 'relevant'));
+  renderData(filteredData);
+
+  const nodata = document.getElementById('no-data');
+
+  if (value.length === 0) {
+    orderactive.classList.add('main__title__selected');
+  } else {
+    orderactive.classList.remove('main__title__selected');
+  }
+
+  if (filteredData.length === 0) {
+    nodata.classList.remove('d-none');
+  } else {
+    nodata.classList.add('d-none');
+  }
+});
+
+renderAside(data, 'aside__main');
+//Aside
+const renderPostAside = (data) => {
+  const random = Math.floor(Math.random() * data.length);
+  const asidemain = document.getElementById('aside__main');
+  const post = createSimplePost(data[random]);
+
+  asidemain.prepend(post);
+};
+
+renderPostAside(data, 'aside__main');
